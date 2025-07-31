@@ -1,5 +1,6 @@
 package com.lazl0.expfactory;
 
+import com.lazl0.expfactory.block.ModBlocks;
 import com.lazl0.expfactory.item.ModItems;
 import org.slf4j.Logger;
 
@@ -50,6 +51,7 @@ public class ExpFactory {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -68,6 +70,11 @@ public class ExpFactory {
             event.accept(ModItems.RAW_TINIUM);
             event.accept(ModItems.TINIUM);
             event.accept(ModItems.TUENIUM);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.RAW_TINIUM_BLOCK);
+            event.accept(ModBlocks.TINIUM_BLOCK);
         }
     }
 

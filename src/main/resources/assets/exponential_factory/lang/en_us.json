@@ -1,6 +1,8 @@
 {
   "item.exponential_factory.raw_tinium": "Raw Tinium",
-
   "item.exponential_factory.tinium": "Tinium",
-  "item.exponential_factory.tuenium": "Tuenium"
+  "item.exponential_factory.tuenium": "Tuenium",
+
+  "block.exponential_factory": "Tinium Block",
+  "block.exponential_factory": "Raw Tinium Block"
 }
