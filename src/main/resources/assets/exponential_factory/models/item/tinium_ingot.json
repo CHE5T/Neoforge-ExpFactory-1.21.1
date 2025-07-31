@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "exponential_factory:item/tuenium"
+    "layer0": "exponential_factory:item/tinium_ingot"
   }
 }

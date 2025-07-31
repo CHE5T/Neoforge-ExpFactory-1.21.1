@@ -14,10 +14,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     //Like tin, but has a more special name
-    public static final DeferredItem<Item> TINIUM = ITEMS.register("tinium",
+    public static final DeferredItem<Item> TINIUM_INGOT = ITEMS.register("tinium_ingot",
             () -> new Item(new Item.Properties()));
     //Kinda like two, for stage 2 or something
-    public static final DeferredItem<Item> TUENIUM = ITEMS.register("tuenium",
+    public static final DeferredItem<Item> TUENIUM_INGOT = ITEMS.register("tuenium_ingot",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

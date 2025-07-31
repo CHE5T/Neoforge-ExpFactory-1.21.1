@@ -68,8 +68,8 @@ public class ExpFactory {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RAW_TINIUM);
-            event.accept(ModItems.TINIUM);
-            event.accept(ModItems.TUENIUM);
+            event.accept(ModItems.TINIUM_INGOT);
+            event.accept(ModItems.TUENIUM_INGOT);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
