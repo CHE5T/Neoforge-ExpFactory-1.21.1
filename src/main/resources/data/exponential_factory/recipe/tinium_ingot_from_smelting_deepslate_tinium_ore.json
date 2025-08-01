@@ -5,7 +5,7 @@
   "experience": 0.7,
   "group": "tinium_ingot",
   "ingredient": {
-    "item": "exponential_factory:tinium_ore"
+    "item": "exponential_factory:deepslate_tinium_ore"
   },
   "result": {
     "id": "exponential_factory:tinium_ingot"

@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.exponential_factory.tinium_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.TINIUM_INGOT);
+                        output.accept(ModItems.SYNTHETIC_TINIUM);
                         output.accept(ModItems.TUENIUM_INGOT);
                         output.accept(ModItems.RAW_TINIUM);
                     }).build());

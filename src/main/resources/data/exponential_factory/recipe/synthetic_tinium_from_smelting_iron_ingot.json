@@ -5,9 +5,9 @@
   "experience": 0.7,
   "group": "tinium_ingot",
   "ingredient": {
-    "item": "exponential_factory:tinium_ore"
+    "item": "minecraft:iron_ingot"
   },
   "result": {
-    "id": "exponential_factory:tinium_ingot"
+    "id": "exponential_factory:synthetic_tinium"
   }
 }

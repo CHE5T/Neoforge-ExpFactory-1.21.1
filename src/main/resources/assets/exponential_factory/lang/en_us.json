@@ -4,11 +4,18 @@
 
   "item.exponential_factory.raw_tinium": "Raw Tinium",
   "item.exponential_factory.tinium_ingot": "Tinium Ingot",
+  "tooltip.exponential_factory.tinium_ingot": "§7Tier 1 Ingot§r",
   "item.exponential_factory.tuenium_ingot": "Tuenium Ingot",
+  "tooltip.exponential_factory.tuenium_ingot": "§7Tier 2 Ingot§r",
+
+  "item.exponential_factory.synthetic_tinium": "Synthetic Tinium Ingot",
+  "tooltip.exponential_factory.synthetic_tinium": "§7Tier 1 Ingot. Very high in iron and calories.§r §aLooks tasty.§r",
+  "tooltip.exponential_factory.synthetic_tinium.shift_down": "§7Tier 1 Ingot. Very high in iron and calories.§r §4Not sure if I'd eat it though.§r",
 
   "block.exponential_factory.tinium_block": "Tinium Block",
   "block.exponential_factory.tuenium_block": "Tuenium Block",
   "block.exponential_factory.tinium_ore": "Tinium Ore",
   "block.exponential_factory.deepslate_tinium_ore": "Deepslate Tinium Ore",
   "block.exponential_factory.raw_tinium_block": "Raw Tinium Block"
+
 }
