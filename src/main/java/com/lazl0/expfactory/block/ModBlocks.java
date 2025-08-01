@@ -22,9 +22,14 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RAW_TINIUM_BLOCK = registerBlock("raw_tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
     public static final DeferredBlock<Block> TINIUM_ORE = registerBlock("tinium_ore",
             () -> new DropExperienceBlock(UniformInt.of(2,4),
+                    BlockBehaviour.Properties.of().strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DEEPSLATE_TINIUM_ORE = registerBlock("deepslate_tinium_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,5),
                     BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
     public static final DeferredBlock<Block> TINIUM_BLOCK = registerBlock("tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));

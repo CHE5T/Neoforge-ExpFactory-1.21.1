@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TUENIUM_BLOCK);
                         output.accept(ModBlocks.RAW_TINIUM_BLOCK);
                         output.accept(ModBlocks.TINIUM_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_TINIUM_ORE);
                     }).build());
 
 

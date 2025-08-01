@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "tinium_ingot",
+  "ingredient": {
+    "item": "exponential_factory:tinium_ore"
+  },
+  "result": {
+    "id": "exponential_factory:tinium_ingot"
+  }
+}
