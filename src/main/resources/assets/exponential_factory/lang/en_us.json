@@ -1,8 +1,13 @@
 {
+  "creativetab.exponential_factory.tinium_items": "EXP Factory Items",
+  "creativetab.exponential_factory.tinium_blocks": "EXP Factory Blocks",
+
   "item.exponential_factory.raw_tinium": "Raw Tinium",
   "item.exponential_factory.tinium_ingot": "Tinium Ingot",
   "item.exponential_factory.tuenium_ingot": "Tuenium Ingot",
 
   "block.exponential_factory.tinium_block": "Tinium Block",
+  "block.exponential_factory.tuenium_block": "Tuenium Block",
+  "block.exponential_factory.tinium_ore": "Tinium Ore",
   "block.exponential_factory.raw_tinium_block": "Raw Tinium Block"
 }

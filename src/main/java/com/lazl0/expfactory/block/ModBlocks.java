@@ -2,9 +2,11 @@ package com.lazl0.expfactory.block;
 
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -20,7 +22,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RAW_TINIUM_BLOCK = registerBlock("raw_tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> TINIUM_ORE = registerBlock("tinium_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2,4),
+                    BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> TINIUM_BLOCK = registerBlock("tinium_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> TUENIUM_BLOCK = registerBlock("tuenium_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 

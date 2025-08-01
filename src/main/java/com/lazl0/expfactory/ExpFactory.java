@@ -1,6 +1,7 @@
 package com.lazl0.expfactory;
 
 import com.lazl0.expfactory.block.ModBlocks;
+import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
 import org.slf4j.Logger;
 
@@ -50,6 +51,8 @@ public class ExpFactory {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
@@ -66,7 +69,7 @@ public class ExpFactory {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        /*if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RAW_TINIUM);
             event.accept(ModItems.TINIUM_INGOT);
             event.accept(ModItems.TUENIUM_INGOT);
@@ -75,7 +78,9 @@ public class ExpFactory {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.RAW_TINIUM_BLOCK);
             event.accept(ModBlocks.TINIUM_BLOCK);
-        }
+            event.accept(ModBlocks.TUENIUM_BLOCK);
+            event.accept(ModBlocks.TINIUM_ORE);
+        }*/
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
