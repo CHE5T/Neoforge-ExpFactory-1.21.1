@@ -20,14 +20,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> TINIUM_SMELTABLES = List.of(ModItems.RAW_TINIUM,
                 ModBlocks.TINIUM_ORE, ModBlocks.DEEPSLATE_TINIUM_ORE);
+        List<ItemLike> SYNTHETIC_TINIUM = List.of(ModItems.SYNTHETIC_TINIUM);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_TINIUM_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.RAW_TINIUM.get())
+                .unlockedBy("has_raw_tinium", has(ModItems.RAW_TINIUM)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TINIUM_BLOCK.get())
-                .pattern("TTT")
-                .pattern("TTT")
-                .pattern("TTT")
-                .define('T', ModItems.TINIUM_INGOT.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.TINIUM_INGOT.get())
                 .unlockedBy("has_tinium", has(ModItems.TINIUM_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TUENIUM_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.TUENIUM_INGOT.get())
+                .unlockedBy("has_tuenium", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TINIUM.get(), 9)
+                .requires(ModBlocks.RAW_TINIUM_BLOCK)
+                .unlockedBy("has has_raw_tinium", has(ModBlocks.RAW_TINIUM_BLOCK))
+                .save(recipeOutput, "exponential_factory:tinium_ingot_from_tinium_block");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TINIUM_INGOT.get(), 9)
                 .requires(ModBlocks.TINIUM_BLOCK)
                 .unlockedBy("has tinium_block", has(ModBlocks.TINIUM_BLOCK))
@@ -39,5 +56,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreSmelting(recipeOutput, TINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TINIUM_INGOT.get(), 0.7f, 200, "tinium");
         oreBlasting(recipeOutput, TINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TINIUM_INGOT.get(), 0.7f, 100, "tinium");
+
+        oreSmelting(recipeOutput, SYNTHETIC_TINIUM, RecipeCategory.MISC, ModItems.SYNTHETIC_TINIUM.get(), 0.7f, 200, "synthetic_tinium");
+        oreBlasting(recipeOutput, SYNTHETIC_TINIUM, RecipeCategory.MISC, ModItems.SYNTHETIC_TINIUM.get(), 0.7f, 100, "synthetic_tinium");
     }
 }

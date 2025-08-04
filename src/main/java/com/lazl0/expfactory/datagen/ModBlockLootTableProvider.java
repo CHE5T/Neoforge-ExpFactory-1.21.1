@@ -43,10 +43,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createManyOreDrops(ModBlocks.DEEPSLATE_TINIUM_ORE.get(), ModItems.RAW_TINIUM.get(), 2, 3));
     }
 
-    protected LootTable.Builder createManyOreDrops(Block oBlock, Item item, float minDrops, float maxDrops) {
+    protected LootTable.Builder createManyOreDrops(Block block, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(oBlock,
-                this.applyExplosionDecay(oBlock, LootItem.lootTableItem(item)
+        return this.createSilkTouchDispatchTable(block,
+                this.applyExplosionDecay(block, LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }

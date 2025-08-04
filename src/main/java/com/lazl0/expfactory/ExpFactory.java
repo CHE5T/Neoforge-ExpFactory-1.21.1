@@ -1,6 +1,7 @@
 package com.lazl0.expfactory;
 
 import com.lazl0.expfactory.block.ModBlocks;
+import com.lazl0.expfactory.datagen.DataGenerators;
 import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
 import org.slf4j.Logger;
@@ -55,6 +56,9 @@ public class ExpFactory {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        //Register the DataGenerator
+        modEventBus.addListener(DataGenerators::gatherData);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
