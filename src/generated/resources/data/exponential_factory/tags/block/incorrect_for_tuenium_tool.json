@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#exponential_factory:needs_tuenium_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_iron_tool"
+  ]
+}

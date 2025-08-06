@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "tinium",
+  "ingredient": {
+    "item": "exponential_factory:raw_tinium"
+  },
+  "result": {
+    "count": 1,
+    "id": "exponential_factory:tinium_ingot"
+  }
+}

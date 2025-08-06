@@ -53,6 +53,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUENIUM_SHOVEL.get());
         handheldItem(ModItems.TUENIUM_HOE.get());
 
+        //Mod armor
         trimmedArmorItem(ModItems.TUENIUM_HELMET);
         trimmedArmorItem(ModItems.TUENIUM_CHESTPLATE);
         trimmedArmorItem(ModItems.TUENIUM_LEGGINGS);

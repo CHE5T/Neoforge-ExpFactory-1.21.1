@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_tinium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exponential_factory:raw_tinium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tinium_ingot_from_smelting_raw_tinium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_tinium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tinium_ingot_from_smelting_raw_tinium"
+    ]
+  }
+}

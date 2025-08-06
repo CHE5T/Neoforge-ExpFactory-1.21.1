@@ -1,0 +1,7 @@
+// 1.21.1	2025-08-06T04:17:35.6436803	Tags for minecraft:item mod id exponential_factory
+2731b57cea39bf5801c01bc500a2044a0f8b5b83 data/minecraft/tags/item/axes.json
+be72d7d66e54132e63d456fbcb48a5cc044d94dc data/minecraft/tags/item/hoes.json
+d17a77177c47b7b8f33a2e4896ad381b6630b9d6 data/minecraft/tags/item/pickaxes.json
+5cc04a230a2d471948414d51a13f88b234e98fba data/minecraft/tags/item/shovels.json
+8a72fb39a28e5d2107dad988ca6debdbb2c5130e data/minecraft/tags/item/swords.json
+9a4f3bbe2d16cc33dd9eac2251e896a1e2dce167 data/minecraft/tags/item/trimmable_armor.json

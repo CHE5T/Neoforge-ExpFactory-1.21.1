@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "exponential_factory:item/tuenium_shovel"
+  }
+}
