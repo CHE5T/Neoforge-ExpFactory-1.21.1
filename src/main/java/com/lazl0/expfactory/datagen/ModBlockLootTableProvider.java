@@ -1,6 +1,7 @@
 package com.lazl0.expfactory.datagen;
 
 import com.lazl0.expfactory.block.ModBlocks;
+import com.lazl0.expfactory.block.custom.SolidWater;
 import com.lazl0.expfactory.item.ModItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -32,15 +33,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         //Makes the generated/resources/data/exponential_factory/loot_table/blocks loot-tables
+
+        //Raw ore blocks
+        dropSelf(ModBlocks.RAW_TINIUM_BLOCK.get());
+        //Blocks made from ingredients
         dropSelf(ModBlocks.TINIUM_BLOCK.get());
         dropSelf(ModBlocks.TUENIUM_BLOCK.get());
-
-        dropSelf(ModBlocks.RAW_TINIUM_BLOCK.get());
-
+        //Ore blocks
         add(ModBlocks.TINIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.TINIUM_ORE.get(), ModItems.RAW_TINIUM.get()));
         add(ModBlocks.DEEPSLATE_TINIUM_ORE.get(),
                 block -> createManyOreDrops(ModBlocks.DEEPSLATE_TINIUM_ORE.get(), ModItems.RAW_TINIUM.get(), 2, 3));
+        //Custom Blocks
+        dropSelf(ModBlocks.SOLID_WATER.get());
     }
 
     protected LootTable.Builder createManyOreDrops(Block block, Item item, float minDrops, float maxDrops) {

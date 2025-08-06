@@ -14,13 +14,16 @@ public class ModBlockStateProvider  extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        //Raw ore blocks
+        blockWithItem(ModBlocks.RAW_TINIUM_BLOCK);
+        //Blocks made with ingredients
         blockWithItem(ModBlocks.TINIUM_BLOCK);
         blockWithItem(ModBlocks.TUENIUM_BLOCK);
-
-        blockWithItem(ModBlocks.RAW_TINIUM_BLOCK);
-
+        //Ore blocks
         blockWithItem(ModBlocks.TINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_TINIUM_ORE);
+        //Custom blocks
+        blockWithItem(ModBlocks.SOLID_WATER);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

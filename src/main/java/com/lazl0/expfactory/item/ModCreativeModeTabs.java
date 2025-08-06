@@ -31,11 +31,16 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(ExpFactory.MODID, "tinium_items_tab"))
                     .title(Component.translatable("creativetab.exponential_factory.tinium_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        //Raw ore blocks
+                        output.accept(ModBlocks.RAW_TINIUM_BLOCK);
+                        //Blocks made with ingredients
                         output.accept(ModBlocks.TINIUM_BLOCK);
                         output.accept(ModBlocks.TUENIUM_BLOCK);
-                        output.accept(ModBlocks.RAW_TINIUM_BLOCK);
+                        //Ore blocks
                         output.accept(ModBlocks.TINIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TINIUM_ORE);
+                        //Custom blocks
+                        output.accept(ModBlocks.SOLID_WATER);
                     }).build());
 
 

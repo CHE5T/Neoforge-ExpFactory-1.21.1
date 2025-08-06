@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "exponential_factory:block/tuenium_block"
-  }
-}
