@@ -24,6 +24,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SYNTHETIC_TINIUM);
                         output.accept(ModItems.TUENIUM_INGOT);
                         output.accept(ModItems.RAW_TINIUM);
+                        //Mod tools
+                        output.accept(ModItems.TUENIUM_SWORD);
+                        output.accept(ModItems.TUENIUM_AXE);
+                        output.accept(ModItems.TUENIUM_PICKAXE);
+                        output.accept(ModItems.TUENIUM_SHOVEL);
+                        output.accept(ModItems.TUENIUM_HOE);
+                        //Mod armors
+                        output.accept(ModItems.TUENIUM_HELMET);
+                        output.accept(ModItems.TUENIUM_CHESTPLATE);
+                        output.accept(ModItems.TUENIUM_LEGGINGS);
+                        output.accept(ModItems.TUENIUM_BOOTS);
                     }).build());
 
     public static final Supplier<CreativeModeTab> TINIUM_BLOCK_TAB = CREATIVE_MODE_TAB.register("tinium_blocks_tab",

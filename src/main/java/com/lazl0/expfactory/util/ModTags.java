@@ -10,6 +10,8 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_TUENIUM_TOOL = createTage("needs_tuenium_tool");
+        public static final TagKey<Block> INCORRECT_FOR_TUENIUM_TOOL = createTage("incorrect_for_tuenium_tool");
 
         private static TagKey<Block> createTage(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(ExpFactory.MODID, name));

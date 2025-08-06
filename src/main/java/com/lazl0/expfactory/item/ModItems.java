@@ -4,14 +4,13 @@ import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.item.custom.FuelItem;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExpFactory.MODID);
@@ -51,6 +50,101 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+    //Mod tools start
+
+    //Tuenium tools start
+    public static final DeferredItem<SwordItem> TUENIUM_SWORD = ITEMS.register("tuenium_sword",
+            () -> new SwordItem(ModToolTiers.TUENIUM, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.TUENIUM, 3, -2.4f))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_sword"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<AxeItem> TUENIUM_AXE = ITEMS.register("tuenium_axe",
+            () -> new AxeItem(ModToolTiers.TUENIUM, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.TUENIUM, 6, -3))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_axe"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<PickaxeItem> TUENIUM_PICKAXE = ITEMS.register("tuenium_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.TUENIUM, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.TUENIUM, 1, -2.8f))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_pickaxe"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ShovelItem> TUENIUM_SHOVEL = ITEMS.register("tuenium_shovel",
+            () -> new ShovelItem(ModToolTiers.TUENIUM, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.TUENIUM, 1.5f, -3))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_shovel"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<HoeItem> TUENIUM_HOE = ITEMS.register("tuenium_hoe",
+            () -> new HoeItem(ModToolTiers.TUENIUM, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.TUENIUM, -2, -1))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_hoe"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    //Tuenium tools end
+
+    //Mod tools end
+    //Mod armors start
+
+    //Tuenium armors start
+    public static final DeferredItem<ArmorItem> TUENIUM_HELMET = ITEMS.register("tuenium_helmet",
+            () -> new ArmorItem(ModArmorMaterials.TUENIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(20))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_helmet"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> TUENIUM_CHESTPLATE = ITEMS.register("tuenium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.TUENIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(20))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_chestplate"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> TUENIUM_LEGGINGS = ITEMS.register("tuenium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.TUENIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(20))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_leggings"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> TUENIUM_BOOTS = ITEMS.register("tuenium_boots",
+            () -> new ArmorItem(ModArmorMaterials.TUENIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(20))){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_boots"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    //Tuenium armors end
+
+    //Mod armors end
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
