@@ -3,6 +3,7 @@ package com.lazl0.expfactory.block;
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.block.custom.SolidWater;
 import com.lazl0.expfactory.item.ModItems;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -47,10 +48,14 @@ public class ModBlocks {
     //Custom Blocks
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()
-                    .sound(SoundType.MUD)){
+                    .strength(0.1f, 100f).sound(SoundType.MUD)){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water"));
+                    if(Screen.hasShiftDown()){
+                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water.shift_down"));
+                    }else{
+                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water"));
+                    }
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });

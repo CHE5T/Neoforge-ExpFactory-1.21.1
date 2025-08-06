@@ -40,10 +40,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tuenium", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SOLID_WATER.get())
-                .pattern("ABA")
-                .pattern("BCB")
-                .pattern("ABA")
-                .define('A', Items.IRON_INGOT)
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', Items.COPPER_INGOT)
                 .define('B', Items.STONE)
                 .define('C', Items.WATER_BUCKET)
                 .unlockedBy("has_water", has(Items.WATER_BUCKET)).save(recipeOutput);
