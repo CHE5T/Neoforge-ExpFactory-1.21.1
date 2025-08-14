@@ -1,6 +1,7 @@
 package com.lazl0.expfactory.block;
 
 import com.lazl0.expfactory.ExpFactory;
+import com.lazl0.expfactory.block.custom.Capsule;
 import com.lazl0.expfactory.block.custom.SolidWater;
 import com.lazl0.expfactory.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
@@ -59,6 +60,9 @@ public class ModBlocks {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+    public static final DeferredBlock<Block> CAPSULE = registerBlock("capsule",
+            () -> new Capsule(BlockBehaviour.Properties.of().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,6 +1,7 @@
 package com.lazl0.expfactory;
 
 import com.lazl0.expfactory.block.ModBlocks;
+import com.lazl0.expfactory.block.entity.ModBlockEntities;
 import com.lazl0.expfactory.datagen.DataGenerators;
 import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
@@ -56,6 +57,8 @@ public class ExpFactory {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         //Register the DataGenerator
         modEventBus.addListener(DataGenerators::gatherData);
