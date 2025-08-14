@@ -2,6 +2,7 @@ package com.lazl0.expfactory.block;
 
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.block.custom.Capsule;
+import com.lazl0.expfactory.block.custom.SolidLava;
 import com.lazl0.expfactory.block.custom.SolidWater;
 import com.lazl0.expfactory.block.custom.SolidWaterAdvanced;
 import com.lazl0.expfactory.item.ModItems;
@@ -41,12 +42,12 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(2,4),
                     BlockBehaviour.Properties.of().strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_TINIUM_ORE = registerBlock("deepslate_tinium_ore",
-            () -> new DropExperienceBlock(UniformInt.of(3,5),
+            () -> new DropExperienceBlock(UniformInt.of(4,6),
                     BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     //Custom Blocks
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()
-                    .strength(0.1f, 100f).sound(SoundType.MUD).noOcclusion()){
+                    .strength(0.1f, 100f).sound(SoundType.MUD)){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     if(Screen.hasShiftDown()){
@@ -59,10 +60,19 @@ public class ModBlocks {
             });
     public static final DeferredBlock<SolidWaterAdvanced> SOLID_WATER_ADVANCED = registerBlock("solid_water_advanced",
             () -> new SolidWaterAdvanced(BlockBehaviour.Properties.of()
-                    .strength(0.2f, 100f).sound(SoundType.MUD).noOcclusion()){
+                    .strength(0.2f, 100f).sound(SoundType.MUD)){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water_advanced"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredBlock<SolidLava> SOLID_LAVA = registerBlock("solid_lava",
+            () -> new SolidLava(BlockBehaviour.Properties.of()
+                    .strength(0.4f, 100f).sound(SoundType.WART_BLOCK)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_lava"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });

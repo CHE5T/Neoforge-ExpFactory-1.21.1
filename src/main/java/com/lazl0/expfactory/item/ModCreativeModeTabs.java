@@ -53,6 +53,7 @@ public class ModCreativeModeTabs {
                         //Custom blocks
                         output.accept(ModBlocks.SOLID_WATER);
                         output.accept(ModBlocks.SOLID_WATER_ADVANCED);
+                        output.accept(ModBlocks.SOLID_LAVA);
                         output.accept(ModBlocks.CAPSULE);
                     }).build());
 

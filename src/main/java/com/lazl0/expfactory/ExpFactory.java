@@ -37,6 +37,8 @@ public class ExpFactory {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        //Register SolidLavaGenerators (for solid_lava only as of now, unless I forget to change this)
+        //NeoForge.EVENT_BUS.addListener(SolidLavaGenerators::onFluidPlace);
 
         ModCreativeModeTabs.register(modEventBus);
 

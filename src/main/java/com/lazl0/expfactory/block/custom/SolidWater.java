@@ -35,13 +35,13 @@ public class SolidWater extends Block implements SimpleWaterloggedBlock {
                         .setValue(WATERLOGGED, Boolean.valueOf(true))
         );
     }
-
+    //There's a glitch where if you take the water out of the block with a tank the water is removed and can't be taken out by a tank again
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(stack.getItem() == Items.BUCKET){
             if(!level.isClientSide){
                 ItemStack filled = new ItemStack(Items.WATER_BUCKET);
-                if(!player.getAbilities().instabuild){
+                if(!player.getAbilities().instabuild){//Survival Mode
                     stack.shrink(1);
                     if(!player.getInventory().add(filled)){
                         player.drop(filled,false);

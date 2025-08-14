@@ -25,6 +25,7 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         //Custom blocks
         blockWithItem(ModBlocks.SOLID_WATER);
         blockWithItem(ModBlocks.SOLID_WATER_ADVANCED);
+        blockWithItem(ModBlocks.SOLID_LAVA);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
