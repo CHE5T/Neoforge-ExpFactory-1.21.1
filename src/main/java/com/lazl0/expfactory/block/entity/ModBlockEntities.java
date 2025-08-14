@@ -17,6 +17,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("capsule_be", () -> BlockEntityType.Builder.of(
                     CapsuleEntity::new, ModBlocks.CAPSULE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<SolidWaterAdvancedEntity>> SOLID_WATER_ADVANCED_BE =
+            BLOCK_ENTITIES.register("solid_water_advanced_be", () -> BlockEntityType.Builder.of(
+                    SolidWaterAdvancedEntity::new, ModBlocks.SOLID_WATER_ADVANCED.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

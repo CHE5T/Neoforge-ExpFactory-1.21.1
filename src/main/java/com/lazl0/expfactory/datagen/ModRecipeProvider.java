@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.List;
@@ -141,9 +142,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("ACA")
                 .pattern("BAB")
                 .define('A', Items.COPPER_INGOT)
-                .define('B', Items.STONE)
+                .define('B', Tags.Items.STONES)
                 .define('C', Items.WATER_BUCKET)
-                .unlockedBy("has_water", has(Items.WATER_BUCKET)).save(recipeOutput);
+                .unlockedBy("has water", has(Items.WATER_BUCKET)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SOLID_WATER_ADVANCED.get())
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', ModItems.TUENIUM_INGOT)
+                .define('B', Tags.Items.STONES)
+                .define('C', Items.WATER_BUCKET)
+                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
         //Special recipes end
 
 

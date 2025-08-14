@@ -3,20 +3,17 @@ package com.lazl0.expfactory.block;
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.block.custom.Capsule;
 import com.lazl0.expfactory.block.custom.SolidWater;
+import com.lazl0.expfactory.block.custom.SolidWaterAdvanced;
 import com.lazl0.expfactory.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -49,7 +46,7 @@ public class ModBlocks {
     //Custom Blocks
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()
-                    .strength(0.1f, 100f).sound(SoundType.MUD)){
+                    .strength(0.1f, 100f).sound(SoundType.MUD).noOcclusion()){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     if(Screen.hasShiftDown()){
@@ -60,9 +57,18 @@ public class ModBlocks {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    public static final DeferredBlock<SolidWaterAdvanced> SOLID_WATER_ADVANCED = registerBlock("solid_water_advanced",
+            () -> new SolidWaterAdvanced(BlockBehaviour.Properties.of()
+                    .strength(0.2f, 100f).sound(SoundType.MUD).noOcclusion()){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water_advanced"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     public static final DeferredBlock<Block> CAPSULE = registerBlock("capsule",
-            () -> new Capsule(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new Capsule(BlockBehaviour.Properties.of().noLootTable().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

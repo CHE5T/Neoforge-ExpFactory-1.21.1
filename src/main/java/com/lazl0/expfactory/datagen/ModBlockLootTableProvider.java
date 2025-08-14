@@ -46,6 +46,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createManyOreDrops(ModBlocks.DEEPSLATE_TINIUM_ORE.get(), ModItems.RAW_TINIUM.get(), 2, 3));
         //Custom Blocks
         dropSelf(ModBlocks.SOLID_WATER.get());
+        dropSelf(ModBlocks.SOLID_WATER_ADVANCED.get());
     }
 
     protected LootTable.Builder createManyOreDrops(Block block, Item item, float minDrops, float maxDrops) {

@@ -52,6 +52,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEEPSLATE_TINIUM_ORE);
                         //Custom blocks
                         output.accept(ModBlocks.SOLID_WATER);
+                        output.accept(ModBlocks.SOLID_WATER_ADVANCED);
                         output.accept(ModBlocks.CAPSULE);
                     }).build());
 

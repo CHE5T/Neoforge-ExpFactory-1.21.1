@@ -39,7 +39,9 @@
   "block.exponential_factory.raw_tinium_block": "Raw Tinium Block",
 
   "block.exponential_factory.solid_water": "Solid Water",
-  "tooltip.exponential_factory.solid_water": "§7Block Of Hydration. Good For Farmland and Cobblestone\nBad For Concrete.§r",
+  "tooltip.exponential_factory.solid_water": "§7Block Of Hydration. Good For Farmland and Cobblestone, Bad For Concrete.§r",
   "tooltip.exponential_factory.solid_water.shift_down": "§4Might Leave Water Behind.§r §7Good For Pools Though.§r",
+  "block.exponential_factory.solid_water_advanced": "Advanced Solid Water",
+  "tooltip.exponential_factory.solid_water_advanced": "§2INFINITE WATER!§r §7Good For Machines§r §8I Know... It's A Sink§r",
   "block.exponential_factory.capsule": "Item Capsule"
 }

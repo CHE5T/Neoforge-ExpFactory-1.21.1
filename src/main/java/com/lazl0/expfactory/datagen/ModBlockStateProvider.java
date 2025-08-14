@@ -24,6 +24,7 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_TINIUM_ORE);
         //Custom blocks
         blockWithItem(ModBlocks.SOLID_WATER);
+        blockWithItem(ModBlocks.SOLID_WATER_ADVANCED);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
