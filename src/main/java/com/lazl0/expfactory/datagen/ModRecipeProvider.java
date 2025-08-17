@@ -161,6 +161,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Tags.Items.STONES)
                 .define('C', Items.LAVA_BUCKET)
                 .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SOLID_GLOWSTONE.get())
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', ModItems.TUENIUM_INGOT)
+                .define('B', Tags.Items.STONES)
+                .define('C', Items.GLOWSTONE)
+                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
         //Special recipes end
 
 

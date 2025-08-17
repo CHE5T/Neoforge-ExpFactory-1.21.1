@@ -44,6 +44,8 @@
   "block.exponential_factory.solid_water_advanced": "Advanced Solid Water",
   "tooltip.exponential_factory.solid_water_advanced": "§2INFINITE WATER!§r §7Good For Machines§r §8I Know... It's A Sink§r",
   "block.exponential_factory.solid_lava": "Solid Lava",
-  "tooltip.exponential_factory.solid_lava": "§2INFINITE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
+  "tooltip.exponential_factory.solid_lava": "§GENERATE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
+  "block.exponential_factory.solid_glowstone": "Solid Glowstone",
+  "tooltip.exponential_factory.solid_glowstone": "§GENERATE§r §ENDSTONE!§r §7Isn't Glowstone Usually Solid?§r §8This+Lava§r",
   "block.exponential_factory.capsule": "Item Capsule"
 }

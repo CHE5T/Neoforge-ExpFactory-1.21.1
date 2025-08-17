@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "exponential_factory:tuenium_ingot"
+    },
+    "B": {
+      "tag": "c:stones"
+    },
+    "C": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "ACA",
+    "BAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "exponential_factory:solid_glowstone"
+  }
+}

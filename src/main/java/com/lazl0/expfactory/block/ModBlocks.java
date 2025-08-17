@@ -1,10 +1,7 @@
 package com.lazl0.expfactory.block;
 
 import com.lazl0.expfactory.ExpFactory;
-import com.lazl0.expfactory.block.custom.Capsule;
-import com.lazl0.expfactory.block.custom.SolidLava;
-import com.lazl0.expfactory.block.custom.SolidWater;
-import com.lazl0.expfactory.block.custom.SolidWaterAdvanced;
+import com.lazl0.expfactory.block.custom.*;
 import com.lazl0.expfactory.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -73,6 +70,15 @@ public class ModBlocks {
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_lava"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredBlock<SolidGlowstone> SOLID_GLOWSTONE = registerBlock("solid_glowstone",
+            () -> new SolidGlowstone(BlockBehaviour.Properties.of()
+                    .strength(0.4f, 100f).sound(SoundType.GLASS)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_glowstone"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
