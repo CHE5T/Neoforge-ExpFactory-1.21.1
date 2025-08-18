@@ -2,7 +2,7 @@
 
 About Exp Factory
 =======
-[Exp Factory](https://legacy.curseforge.com/minecraft/mc-mods/exp-factory) (Short for Exponential Factory) is a mod about making every item in the game automatable for building factories.
+[Exp Factory](https://curseforge.com/minecraft/mc-mods/exp-factory) (Short for Exponential Factory) is a mod about making every item in the game automatable for building factories.
 
 Credits
 =======
