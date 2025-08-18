@@ -39,6 +39,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         //Blocks made from ingredients
         dropSelf(ModBlocks.TINIUM_BLOCK.get());
         dropSelf(ModBlocks.TUENIUM_BLOCK.get());
+        dropSelf(ModBlocks.TRINIUM_BLOCK.get());
         //Ore blocks
         add(ModBlocks.TINIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.TINIUM_ORE.get(), ModItems.RAW_TINIUM.get()));

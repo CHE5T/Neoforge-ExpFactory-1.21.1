@@ -40,6 +40,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AAA")
                 .define('A', ModItems.TUENIUM_INGOT.get())
                 .unlockedBy("has_tuenium", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TRINIUM_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.TRINIUM_INGOT.get())
+                .unlockedBy("has_trinium", has(ModItems.TRINIUM_INGOT)).save(recipeOutput);
         //Item to block recipes end
 
 
@@ -57,6 +63,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.TUENIUM_BLOCK)
                 .unlockedBy("has tuenium_block", has(ModBlocks.TUENIUM_BLOCK)).
                 save(recipeOutput, "exponential_factory:tuenium_ingot_from_tuenium_block");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TRINIUM_INGOT.get(), 9)
+                .requires(ModBlocks.TRINIUM_BLOCK)
+                .unlockedBy("has trinium_block", has(ModBlocks.TRINIUM_BLOCK)).
+                save(recipeOutput, "exponential_factory:trinium_ingot_from_trinium_block");
         //Block to item recipes end
 
 
@@ -165,10 +175,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BAB")
                 .pattern("ACA")
                 .pattern("BAB")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModItems.TRINIUM_INGOT)
                 .define('B', Tags.Items.STONES)
                 .define('C', Items.GLOWSTONE)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has trinium_ingot", has(ModItems.TRINIUM_INGOT)).save(recipeOutput);
         //Special recipes end
 
 

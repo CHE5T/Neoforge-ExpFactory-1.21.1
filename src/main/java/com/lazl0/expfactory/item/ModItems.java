@@ -15,41 +15,25 @@ import java.util.function.Supplier;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExpFactory.MODID);
 
-    //Raw ores
+    //Raw ore(s)
     public static final DeferredItem<Item> RAW_TINIUM = ITEMS.register("raw_tinium",
-            () -> new Item(new Item.Properties()));
+            () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.raw_tinium"));
 
     //Like tin, but has a more special name
     public static final DeferredItem<Item> TINIUM_INGOT = ITEMS.register("tinium_ingot",
-            () -> new Item(new Item.Properties()){
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tinium_ingot"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+            () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.tinium_ingot"));
     //Kinda like two, for stage 2 or something
     public static final DeferredItem<Item> TUENIUM_INGOT = ITEMS.register("tuenium_ingot",
-            () -> new Item(new Item.Properties()){
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_ingot"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+            () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.tuenium_ingot"));
+    public static final DeferredItem<Item> TRINIUM_INGOT = ITEMS.register("trinium_ingot",
+            () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.trinium_ingot"));
+    //Quadnium/Quadinium Ingot next?
 
     public static final DeferredItem<Item> SYNTHETIC_TINIUM = ITEMS.register("synthetic_tinium",
-            () -> new FuelItem(new Item.Properties().food(ModFoodProperties.SYNTHETIC_TINIUM), 2000){
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    if(Screen.hasShiftDown()){
-                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.synthetic_tinium.shift_down"));
-                    }else{
-                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.synthetic_tinium"));
-                    }
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+            () -> new FuelItem(new Item.Properties().food(ModFoodProperties.SYNTHETIC_TINIUM),
+                    "tooltip.exponential_factory.synthetic_tinium",
+                    "tooltip.exponential_factory.synthetic_tinium.shift_down",
+                    2000));
 
 
 

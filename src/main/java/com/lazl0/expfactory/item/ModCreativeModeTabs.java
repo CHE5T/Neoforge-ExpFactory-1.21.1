@@ -20,10 +20,11 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TINIUM_INGOT.get()))
                     .title(Component.translatable("creativetab.exponential_factory.tinium_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.RAW_TINIUM);
                         output.accept(ModItems.TINIUM_INGOT);
                         output.accept(ModItems.SYNTHETIC_TINIUM);
                         output.accept(ModItems.TUENIUM_INGOT);
-                        output.accept(ModItems.RAW_TINIUM);
+                        output.accept(ModItems.TRINIUM_INGOT);
                         //Mod tools
                         output.accept(ModItems.TUENIUM_SWORD);
                         output.accept(ModItems.TUENIUM_AXE);
@@ -47,6 +48,7 @@ public class ModCreativeModeTabs {
                         //Blocks made with ingredients
                         output.accept(ModBlocks.TINIUM_BLOCK);
                         output.accept(ModBlocks.TUENIUM_BLOCK);
+                        output.accept(ModBlocks.TRINIUM_BLOCK);
                         //Ore blocks
                         output.accept(ModBlocks.TINIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TINIUM_ORE);

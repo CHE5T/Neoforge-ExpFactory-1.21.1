@@ -1,6 +1,6 @@
-// 1.21.1	2025-08-06T02:08:41.7881541	Tags for minecraft:block mod id exponential_factory
+// 1.21.1	2025-08-17T20:25:50.5634048	Tags for minecraft:block mod id exponential_factory
 6b3dec98426200adcfdc712ba32166e190aa4d41 data/exponential_factory/tags/block/incorrect_for_tuenium_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/exponential_factory/tags/block/needs_tuenium_tool.json
-a14d45c77e512020cad310b77fe6df7acfd2c577 data/minecraft/tags/block/mineable/pickaxe.json
-73b6b1f77a00e254b22a12eac01f7e419e69ae66 data/minecraft/tags/block/needs_diamond_tool.json
+0eba37d62a754a6ac811087fffd55fa831802444 data/minecraft/tags/block/mineable/pickaxe.json
+e18113d0b972035c7358dfe413d0c3dff2c4bfd0 data/minecraft/tags/block/needs_diamond_tool.json
 cebcf17c19c7bf35b1695d06d7af55eff8e17dbc data/minecraft/tags/block/needs_iron_tool.json

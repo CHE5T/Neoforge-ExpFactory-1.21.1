@@ -19,6 +19,7 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         //Blocks made with ingredients
         blockWithItem(ModBlocks.TINIUM_BLOCK);
         blockWithItem(ModBlocks.TUENIUM_BLOCK);
+        blockWithItem(ModBlocks.TRINIUM_BLOCK);
         //Ore blocks
         blockWithItem(ModBlocks.TINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_TINIUM_ORE);

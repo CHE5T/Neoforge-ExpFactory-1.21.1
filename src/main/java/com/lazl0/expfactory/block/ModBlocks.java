@@ -30,10 +30,13 @@ public class ModBlocks {
     //Blocks made from ingredients
     public static final DeferredBlock<Block> TINIUM_BLOCK = registerBlock("tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(3.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> TUENIUM_BLOCK = registerBlock("tuenium_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> TRINIUM_BLOCK = registerBlock("trinium_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(6.5f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
     //Ore blocks
     public static final DeferredBlock<Block> TINIUM_ORE = registerBlock("tinium_ore",
             () -> new DropExperienceBlock(UniformInt.of(2,4),
@@ -44,44 +47,21 @@ public class ModBlocks {
     //Custom Blocks
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()
-                    .strength(0.1f, 100f).sound(SoundType.MUD)){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    if(Screen.hasShiftDown()){
-                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water.shift_down"));
-                    }else{
-                        tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water"));
-                    }
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+                    .strength(0.1f, 100f).sound(SoundType.MUD),
+                    "tooltip.exponential_factory.solid_water",
+                    "tooltip.exponential_factory.solid_water.shift_down"));
     public static final DeferredBlock<SolidWaterAdvanced> SOLID_WATER_ADVANCED = registerBlock("solid_water_advanced",
             () -> new SolidWaterAdvanced(BlockBehaviour.Properties.of()
-                    .strength(0.2f, 100f).sound(SoundType.MUD)){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_water_advanced"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+                    .strength(0.2f, 100f).sound(SoundType.MUD),
+                    "tooltip.exponential_factory.solid_water_advanced"));
     public static final DeferredBlock<SolidLava> SOLID_LAVA = registerBlock("solid_lava",
             () -> new SolidLava(BlockBehaviour.Properties.of()
-                    .strength(0.4f, 100f).sound(SoundType.WART_BLOCK)){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_lava"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+                    .strength(0.4f, 100f).sound(SoundType.WART_BLOCK),
+                    "tooltip.exponential_factory.solid_lava"));
     public static final DeferredBlock<SolidGlowstone> SOLID_GLOWSTONE = registerBlock("solid_glowstone",
             () -> new SolidGlowstone(BlockBehaviour.Properties.of()
-                    .strength(0.4f, 100f).sound(SoundType.GLASS)){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.solid_glowstone"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+                    .strength(0.4f, 100f).sound(SoundType.GLASS),
+                    "tooltip.exponential_factory.solid_glowstone"));
 
     public static final DeferredBlock<Block> CAPSULE = registerBlock("capsule",
             () -> new Capsule(BlockBehaviour.Properties.of().noLootTable().noOcclusion()));

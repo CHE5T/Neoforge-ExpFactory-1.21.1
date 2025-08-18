@@ -40,11 +40,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(ModItems.RAW_TINIUM.get());
+
         basicItem(ModItems.TINIUM_INGOT.get());
         basicItem(ModItems.SYNTHETIC_TINIUM.get());
         basicItem(ModItems.TUENIUM_INGOT.get());
+        basicItem(ModItems.TRINIUM_INGOT.get());
 
-        basicItem(ModItems.RAW_TINIUM.get());
 
         //Mod tools
         handheldItem(ModItems.TUENIUM_SWORD.get());

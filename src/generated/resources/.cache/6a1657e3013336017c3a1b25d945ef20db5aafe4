@@ -1,7 +1,8 @@
-// 1.21.1	2025-08-06T04:17:35.6396813	Item Models: exponential_factory
+// 1.21.1	2025-08-17T18:05:29.5825176	Item Models: exponential_factory
 10589fb4ff6bd3161ad9ed65ba824ffeb42d57ce assets/exponential_factory/models/item/raw_tinium.json
 1dc3eec94d1a44926a12593ef7765252f96c34e5 assets/exponential_factory/models/item/synthetic_tinium.json
 29a5c75bd108772bea9e283b5d015ea1643d9e38 assets/exponential_factory/models/item/tinium_ingot.json
+0b790851c29c6be59bcb53aa509aa10386a07ed1 assets/exponential_factory/models/item/trinium_ingot.json
 81c395c962c5426717f481014162227e13534127 assets/exponential_factory/models/item/tuenium_axe.json
 871624292ba5f2807d73949c5d314992f51d5a22 assets/exponential_factory/models/item/tuenium_boots.json
 876a442608a630b78f7ae16c8427cbe11cc6b5b8 assets/exponential_factory/models/item/tuenium_boots_amethyst_trim.json

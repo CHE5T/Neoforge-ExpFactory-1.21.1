@@ -4,21 +4,15 @@
   "key": {
     "A": {
       "item": "exponential_factory:trinium_ingot"
-    },
-    "B": {
-      "tag": "c:stones"
-    },
-    "C": {
-      "item": "minecraft:glowstone"
     }
   },
   "pattern": [
-    "BAB",
-    "ACA",
-    "BAB"
+    "AAA",
+    "AAA",
+    "AAA"
   ],
   "result": {
     "count": 1,
-    "id": "exponential_factory:solid_glowstone"
+    "id": "exponential_factory:trinium_block"
   }
 }

@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has trinium_ingot": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "exponential_factory:trinium_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_trinium": {
       "conditions": {
         "items": [
           {
@@ -10,23 +16,17 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "exponential_factory:solid_glowstone"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has trinium_ingot"
+      "has_trinium"
     ]
   ],
   "rewards": {
     "recipes": [
-      "exponential_factory:solid_glowstone"
+      "exponential_factory:trinium_block"
     ]
   }
 }

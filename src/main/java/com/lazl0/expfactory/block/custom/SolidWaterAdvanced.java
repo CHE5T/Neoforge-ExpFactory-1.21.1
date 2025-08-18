@@ -1,5 +1,6 @@
 package com.lazl0.expfactory.block.custom;
 
+import com.lazl0.expfactory.block.TooltipBlock;
 import com.lazl0.expfactory.block.entity.SolidWaterAdvancedEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -17,9 +18,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class SolidWaterAdvanced extends Block implements EntityBlock {
-    public SolidWaterAdvanced(Properties properties){
-        super(properties);
+public class SolidWaterAdvanced extends TooltipBlock implements EntityBlock {
+    public SolidWaterAdvanced(Properties properties, String key){
+        super(properties, key);
     }
 
     @Override

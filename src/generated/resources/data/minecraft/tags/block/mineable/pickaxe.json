@@ -2,6 +2,7 @@
   "values": [
     "exponential_factory:tinium_block",
     "exponential_factory:tuenium_block",
+    "exponential_factory:trinium_block",
     "exponential_factory:raw_tinium_block",
     "exponential_factory:tinium_ore",
     "exponential_factory:deepslate_tinium_ore"

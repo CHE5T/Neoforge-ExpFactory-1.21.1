@@ -3,10 +3,14 @@
   "creativetab.exponential_factory.tinium_blocks": "EXP Factory Blocks",
 
   "item.exponential_factory.raw_tinium": "Raw Tinium",
+  "tooltip.exponential_factory.raw_tinium": "§7Tier 1 Resource§r",
   "item.exponential_factory.tinium_ingot": "Tinium Ingot",
   "tooltip.exponential_factory.tinium_ingot": "§7Tier 1 Ingot§r",
   "item.exponential_factory.tuenium_ingot": "Tuenium Ingot",
   "tooltip.exponential_factory.tuenium_ingot": "§2Tier 2 Ingot§r",
+  "item.exponential_factory.trinium_ingot": "Trinium Ingot",
+  "tooltip.exponential_factory.trinium_ingot": "§3Tier 3 Ingot§r",
+  "tooltip.exponential_factory.trinium_ingot2": "§3Tier 3 Ingot test line§r",
 
   "item.exponential_factory.synthetic_tinium": "Synthetic Tinium Ingot",
   "tooltip.exponential_factory.synthetic_tinium": "§7Tier 1 Ingot. Very high in iron and calories.§r §aLooks tasty.§r",
@@ -32,11 +36,12 @@
   "item.exponential_factory.tuenium_boots": "Tuenium Boots",
   "tooltip.exponential_factory.tuenium_boots": "§2Tier 2 Armor§r",
 
+  "block.exponential_factory.raw_tinium_block": "Raw Tinium Block",
   "block.exponential_factory.tinium_block": "Tinium Block",
   "block.exponential_factory.tuenium_block": "Tuenium Block",
+  "block.exponential_factory.trinium_block": "Trinium Block",
   "block.exponential_factory.tinium_ore": "Tinium Ore",
   "block.exponential_factory.deepslate_tinium_ore": "Deepslate Tinium Ore",
-  "block.exponential_factory.raw_tinium_block": "Raw Tinium Block",
 
   "block.exponential_factory.solid_water": "Solid Water",
   "tooltip.exponential_factory.solid_water": "§7Block Of Hydration. Good For Farmland and Cobblestone, Bad For Concrete.§r",
@@ -44,8 +49,8 @@
   "block.exponential_factory.solid_water_advanced": "Advanced Solid Water",
   "tooltip.exponential_factory.solid_water_advanced": "§2INFINITE WATER!§r §7Good For Machines§r §8I Know... It's A Sink§r",
   "block.exponential_factory.solid_lava": "Solid Lava",
-  "tooltip.exponential_factory.solid_lava": "§GENERATE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
+  "tooltip.exponential_factory.solid_lava": "§2GENERATE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
   "block.exponential_factory.solid_glowstone": "Solid Glowstone",
-  "tooltip.exponential_factory.solid_glowstone": "§GENERATE§r §ENDSTONE!§r §7Isn't Glowstone Usually Solid?§r §8This+Lava§r",
+  "tooltip.exponential_factory.solid_glowstone": "§2GENERATE§r §7ENDSTONE!§r §7Isn't Glowstone Usually Solid?§r §8This+Lava§r",
   "block.exponential_factory.capsule": "Item Capsule"
 }

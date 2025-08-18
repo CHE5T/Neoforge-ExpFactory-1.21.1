@@ -1,5 +1,6 @@
 package com.lazl0.expfactory.block.custom;
 
+import com.lazl0.expfactory.block.TooltipBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -24,11 +25,11 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class SolidWater extends Block implements SimpleWaterloggedBlock {
+public class SolidWater extends TooltipBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public SolidWater(Properties properties) {
-        super(properties);
+    public SolidWater(Properties properties, String key, String key2) {
+        super(properties, key, key2);
         this.registerDefaultState(
                 this.stateDefinition
                         .any()
