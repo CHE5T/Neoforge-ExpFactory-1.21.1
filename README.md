@@ -1,25 +1,17 @@
+![expf logo](expf_logo.png)
 
-Installation information
+About Exp Factory
+=======
+[Exp Factory](https://legacy.curseforge.com/minecraft/mc-mods/exp-factory) (Short for Exponential Factory) is a mod about making every item in the game automatable for building factories.
+
+Credits
 =======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+* LAZL0/CHE5T (Same Person)
+  * Currently, the only one making this mod since I don't know anyone that knows how to code minecraft mods, including myself.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Warnings
+=======
+The mod is currently in development and missing most of the machines, blocks, and items that I plan on adding in the future. As well, The mod is unrefined and likely is unstable for current use, so install or copy code at your own risk.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+If you plan to keep following this mod and don't speak english, I sadly have no plans of adding support for other languages. If this mod gets popular in the future I may add a way for community translation using something like Crowdin, but I don't know how to use Crowdin and have no plans for translations.
