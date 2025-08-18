@@ -42,6 +42,8 @@
   "block.exponential_factory.trinium_block": "Trinium Block",
   "block.exponential_factory.tinium_ore": "Tinium Ore",
   "block.exponential_factory.deepslate_tinium_ore": "Deepslate Tinium Ore",
+  "block.exponential_factory.deepslate_tuenium_ore": "Tuenium Ore",
+  "block.exponential_factory.netherrack_trinium_ore": "Trinium Ore",
 
   "block.exponential_factory.solid_water": "Solid Water",
   "tooltip.exponential_factory.solid_water": "§7Block Of Hydration. Good For Farmland and Cobblestone, Bad For Concrete.§r",

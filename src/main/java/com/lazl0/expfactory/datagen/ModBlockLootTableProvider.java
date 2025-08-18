@@ -45,6 +45,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.TINIUM_ORE.get(), ModItems.RAW_TINIUM.get()));
         add(ModBlocks.DEEPSLATE_TINIUM_ORE.get(),
                 block -> createManyOreDrops(ModBlocks.DEEPSLATE_TINIUM_ORE.get(), ModItems.RAW_TINIUM.get(), 2, 3));
+        add(ModBlocks.DEEPSLATE_TUENIUM_ORE.get(),
+                block -> createManyOreDrops(ModBlocks.DEEPSLATE_TUENIUM_ORE.get(), ModItems.TUENIUM_INGOT.get(), 2, 4));
+        add(ModBlocks.NETHERRACK_TRINIUM_ORE.get(),
+                block -> createManyOreDrops(ModBlocks.NETHERRACK_TRINIUM_ORE.get(), ModItems.TRINIUM_INGOT.get(), 3, 4));
         //Custom Blocks
         dropSelf(ModBlocks.SOLID_WATER.get());
         dropSelf(ModBlocks.SOLID_WATER_ADVANCED.get());

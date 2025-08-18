@@ -27,7 +27,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RAW_TINIUM_BLOCK.get())
 
                 .add(ModBlocks.TINIUM_ORE.get())
-                .add(ModBlocks.DEEPSLATE_TINIUM_ORE.get());
+                .add(ModBlocks.DEEPSLATE_TINIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_TUENIUM_ORE.get())
+                .add(ModBlocks.NETHERRACK_TRINIUM_ORE.get());
 
 
         tag(BlockTags.NEEDS_IRON_TOOL)
@@ -39,13 +41,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RAW_TINIUM_BLOCK.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.TRINIUM_BLOCK.get());
+                .add(ModBlocks.TRINIUM_BLOCK.get())
+
+                .add(ModBlocks.DEEPSLATE_TUENIUM_ORE.get())
+                .add(ModBlocks.NETHERRACK_TRINIUM_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_TUENIUM_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_TUENIUM_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .remove(ModTags.Blocks.NEEDS_TUENIUM_TOOL);
     }
 }

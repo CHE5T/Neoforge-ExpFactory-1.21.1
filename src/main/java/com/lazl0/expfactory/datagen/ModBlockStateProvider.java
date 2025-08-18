@@ -23,6 +23,8 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         //Ore blocks
         blockWithItem(ModBlocks.TINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_TINIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_TUENIUM_ORE);
+        blockWithItem(ModBlocks.NETHERRACK_TRINIUM_ORE);
         //Custom blocks
         blockWithItem(ModBlocks.SOLID_WATER);
         blockWithItem(ModBlocks.SOLID_WATER_ADVANCED);

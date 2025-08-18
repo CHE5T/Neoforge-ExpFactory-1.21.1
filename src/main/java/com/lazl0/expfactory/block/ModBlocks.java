@@ -26,7 +26,7 @@ public class ModBlocks {
     //Raw ore blocks
     public static final DeferredBlock<Block> RAW_TINIUM_BLOCK = registerBlock("raw_tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     //Blocks made from ingredients
     public static final DeferredBlock<Block> TINIUM_BLOCK = registerBlock("tinium_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -43,7 +43,13 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of().strength(4.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_TINIUM_ORE = registerBlock("deepslate_tinium_ore",
             () -> new DropExperienceBlock(UniformInt.of(4,6),
-                    BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    BlockBehaviour.Properties.of().strength(5.0f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> DEEPSLATE_TUENIUM_ORE = registerBlock("deepslate_tuenium_ore",
+            () -> new DropExperienceBlock(UniformInt.of(5,7),
+                    BlockBehaviour.Properties.of().strength(6.0f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> NETHERRACK_TRINIUM_ORE = registerBlock("netherrack_trinium_ore",
+            () -> new DropExperienceBlock(UniformInt.of(6,8),
+                    BlockBehaviour.Properties.of().strength(7.0f).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK)));
     //Custom Blocks
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()

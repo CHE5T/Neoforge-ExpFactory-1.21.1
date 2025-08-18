@@ -52,6 +52,8 @@ public class ModCreativeModeTabs {
                         //Ore blocks
                         output.accept(ModBlocks.TINIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TINIUM_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_TUENIUM_ORE);
+                        output.accept(ModBlocks.NETHERRACK_TRINIUM_ORE);
                         //Custom blocks
                         output.accept(ModBlocks.SOLID_WATER);
                         output.accept(ModBlocks.SOLID_WATER_ADVANCED);

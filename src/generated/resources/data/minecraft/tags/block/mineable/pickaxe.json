@@ -5,6 +5,8 @@
     "exponential_factory:trinium_block",
     "exponential_factory:raw_tinium_block",
     "exponential_factory:tinium_ore",
-    "exponential_factory:deepslate_tinium_ore"
+    "exponential_factory:deepslate_tinium_ore",
+    "exponential_factory:deepslate_tuenium_ore",
+    "exponential_factory:netherrack_trinium_ore"
   ]
 }
