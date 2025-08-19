@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "exponential_factory:tier_one_ingot"
+    },
+    "B": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "B B",
+    " A ",
+    "B B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "exponential_factory:capsule"
+  }
+}

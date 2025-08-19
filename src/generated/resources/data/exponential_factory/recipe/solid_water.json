@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "minecraft:copper_ingot"
+      "tag": "exponential_factory:tier_one_ingot"
     },
     "B": {
       "tag": "c:stones"

@@ -15,6 +15,9 @@
   "item.exponential_factory.synthetic_tinium": "Synthetic Tinium Ingot",
   "tooltip.exponential_factory.synthetic_tinium": "§7Tier 1 Ingot. Very high in iron and calories.§r §aLooks tasty.§r",
   "tooltip.exponential_factory.synthetic_tinium.shift_down": "§7Tier 1 Ingot. Very high in iron and calories.§r §4Not sure if I'd eat it though.§r",
+  "item.exponential_factory.synthetic_tuenium": "Synthetic Tuenium Ingot",
+  "tooltip.exponential_factory.synthetic_tuenium": "§2Tier 2 Ingot.§r §7Very high in... gold?!§r §aLooks tasty.§r",
+  "tooltip.exponential_factory.synthetic_tuenium.shift_down": "§2Tier 2 Ingot.§r §7Very high in. gold?!§r §4Not sure if I'd eat it. Unless you're a fan of gambling.§r",
 
   "item.exponential_factory.tuenium_sword": "Tuenium Sword",
   "tooltip.exponential_factory.tuenium_sword": "§2Tier 2 Tool§r",
@@ -54,5 +57,6 @@
   "tooltip.exponential_factory.solid_lava": "§2GENERATE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
   "block.exponential_factory.solid_glowstone": "Solid Glowstone",
   "tooltip.exponential_factory.solid_glowstone": "§2GENERATE§r §7ENDSTONE!§r §7Isn't Glowstone Usually Solid?§r §8This+Lava§r",
-  "block.exponential_factory.capsule": "Item Capsule"
+  "block.exponential_factory.capsule": "Item Capsule",
+  "tooltip.exponential_factory.capsule": "§7Fancy Way To Display Stuff§r"
 }

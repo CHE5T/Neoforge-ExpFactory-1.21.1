@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "exponential_factory:trinium_ingot"
+            "items": "#exponential_factory:tier_three_ingot"
           }
         ]
       },

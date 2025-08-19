@@ -65,15 +65,32 @@ public class Capsule extends BaseEntityBlock {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof CapsuleEntity capsuleEntity) {
+            //inserts item
             if(capsuleEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()){
                 capsuleEntity.inventory.insertItem(0, stack.copy(), false);
                 stack.shrink(1);
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-            }else if(stack.isEmpty()){
+
+                //Switches items
+            }else if(!capsuleEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()){
+                ItemStack temp = capsuleEntity.inventory.extractItem(0, 1, false);
+                capsuleEntity.clearContents();
+                capsuleEntity.inventory.insertItem(0, stack.copy(), false);
+                stack.shrink(1);
+                player.getInventory().add(temp);
+                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
+
+                //Takes item out
+            }else if(!capsuleEntity.inventory.getStackInSlot(0).isEmpty() && stack.isEmpty()){
                 ItemStack stackInCapsule = capsuleEntity.inventory.extractItem(0, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, stackInCapsule);
+                //player.getInventory().add(stackInCapsule);
                 capsuleEntity.clearContents();
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
+
+                //Does nothing
+            }else{
+                return ItemInteractionResult.FAIL;
             }
         }
 

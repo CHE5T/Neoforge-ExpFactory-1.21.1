@@ -26,9 +26,18 @@ public class CapsuleEntity extends BlockEntity {
             }
         }
     };
+    private float rotation;
 
     public CapsuleEntity(BlockPos pos, BlockState blockState) {
         super(ModBlockEntities.CAPSULE_BE.get(), pos, blockState);
+    }
+
+    public float getRenderRotation() {
+        rotation += 0.5f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
     }
 
     public void clearContents() {

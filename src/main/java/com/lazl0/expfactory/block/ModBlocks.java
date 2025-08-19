@@ -70,7 +70,13 @@ public class ModBlocks {
                     "tooltip.exponential_factory.solid_glowstone"));
 
     public static final DeferredBlock<Block> CAPSULE = registerBlock("capsule",
-            () -> new Capsule(BlockBehaviour.Properties.of().noLootTable().noOcclusion()));
+            () -> new Capsule(BlockBehaviour.Properties.of().noLootTable().noOcclusion()){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.exponential_factory.capsule"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

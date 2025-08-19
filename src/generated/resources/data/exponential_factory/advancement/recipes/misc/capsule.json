@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has tinium_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#exponential_factory:tier_one_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "exponential_factory:capsule"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has tinium_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "exponential_factory:capsule"
+    ]
+  }
+}

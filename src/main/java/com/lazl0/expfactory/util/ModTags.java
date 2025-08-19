@@ -19,6 +19,9 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> TIER_ONE_INGOT = createTage("tier_one_ingot");
+        public static final TagKey<Item> TIER_TWO_INGOT = createTage("tier_two_ingot");
+        public static final TagKey<Item> TIER_THREE_INGOT = createTage("tier_three_ingot");
 
         private static TagKey<Item> createTage(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(ExpFactory.MODID, name));

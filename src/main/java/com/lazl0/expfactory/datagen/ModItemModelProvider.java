@@ -45,6 +45,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TINIUM_INGOT.get());
         basicItem(ModItems.SYNTHETIC_TINIUM.get());
         basicItem(ModItems.TUENIUM_INGOT.get());
+        basicItem(ModItems.SYNTHETIC_TUENIUM.get());
         basicItem(ModItems.TRINIUM_INGOT.get());
 
 

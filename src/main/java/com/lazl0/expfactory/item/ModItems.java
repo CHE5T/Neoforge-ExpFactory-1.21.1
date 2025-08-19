@@ -29,10 +29,16 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.trinium_ingot"));
     //Quadnium/Quadinium Ingot next?
 
+    //Synthetic Versions
     public static final DeferredItem<Item> SYNTHETIC_TINIUM = ITEMS.register("synthetic_tinium",
             () -> new FuelItem(new Item.Properties().food(ModFoodProperties.SYNTHETIC_TINIUM),
                     "tooltip.exponential_factory.synthetic_tinium",
                     "tooltip.exponential_factory.synthetic_tinium.shift_down",
+                    1000));
+    public static final DeferredItem<Item> SYNTHETIC_TUENIUM = ITEMS.register("synthetic_tuenium",
+            () -> new FuelItem(new Item.Properties().food(ModFoodProperties.SYNTHETIC_TUENIUM),
+                    "tooltip.exponential_factory.synthetic_tuenium",
+                    "tooltip.exponential_factory.synthetic_tuenium.shift_down",
                     2000));
 
 

@@ -2,10 +2,13 @@ package com.lazl0.expfactory;
 
 import com.lazl0.expfactory.block.ModBlocks;
 import com.lazl0.expfactory.block.entity.ModBlockEntities;
+import com.lazl0.expfactory.block.entity.renderer.CapsuleEntityRenderer;
 import com.lazl0.expfactory.datagen.DataGenerators;
 import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
 import com.lazl0.expfactory.registry.ModCapabilities;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -58,6 +61,8 @@ public class ExpFactory {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        modEventBus.addListener(ClientModEvents::registerBlockEntityRenderer);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -84,5 +89,16 @@ public class ExpFactory {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
+    }
+
+    public static class ClientModEvents {
+        public static void onClientSetup(FMLClientSetupEvent event){
+
+        }
+
+        @SubscribeEvent
+        public static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
+            event.registerBlockEntityRenderer(ModBlockEntities.CAPSULE_BE.get(), CapsuleEntityRenderer::new);
+        }
     }
 }

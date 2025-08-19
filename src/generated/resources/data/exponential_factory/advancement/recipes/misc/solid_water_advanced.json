@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has tuenium_ingot": {
+    "has tier_two_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "exponential_factory:tuenium_ingot"
+            "items": "#exponential_factory:tier_two_ingot"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has tuenium_ingot"
+      "has tier_two_ingot"
     ]
   ],
   "rewards": {

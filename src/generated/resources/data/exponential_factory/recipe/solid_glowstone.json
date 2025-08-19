@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "exponential_factory:trinium_ingot"
+      "tag": "exponential_factory:tier_three_ingot"
     },
     "B": {
       "tag": "c:stones"

@@ -1,4 +1,7 @@
-// 1.21.1	2025-08-06T04:17:35.6436803	Tags for minecraft:item mod id exponential_factory
+// 1.21.1	2025-08-18T22:06:21.0801207	Tags for minecraft:item mod id exponential_factory
+c051de07397788fde558937b1d80c9b46bbf99ca data/exponential_factory/tags/item/tier_one_ingot.json
+ad60a02dd0dacdbb58a36f20db6b0b6bfc95fcd6 data/exponential_factory/tags/item/tier_three_ingot.json
+e1385d058e7d10897f003d7a8e8d123bcd2d44d8 data/exponential_factory/tags/item/tier_two_ingot.json
 2731b57cea39bf5801c01bc500a2044a0f8b5b83 data/minecraft/tags/item/axes.json
 be72d7d66e54132e63d456fbcb48a5cc044d94dc data/minecraft/tags/item/hoes.json
 d17a77177c47b7b8f33a2e4896ad381b6630b9d6 data/minecraft/tags/item/pickaxes.json

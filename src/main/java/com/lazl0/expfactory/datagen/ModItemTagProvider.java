@@ -2,6 +2,7 @@ package com.lazl0.expfactory.datagen;
 
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.item.ModItems;
+import com.lazl0.expfactory.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -19,6 +20,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+        //Mod resources
+        tag(ModTags.Items.TIER_ONE_INGOT)
+                .add(ModItems.TINIUM_INGOT.get())
+                .add(ModItems.SYNTHETIC_TINIUM.get());
+        tag(ModTags.Items.TIER_TWO_INGOT)
+                .add(ModItems.TUENIUM_INGOT.get())
+                .add(ModItems.SYNTHETIC_TUENIUM.get());
+        tag(ModTags.Items.TIER_THREE_INGOT)
+                .add(ModItems.TRINIUM_INGOT.get());
 
         //Mod tools
         tag(ItemTags.SWORDS)

@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TINIUM_INGOT);
                         output.accept(ModItems.SYNTHETIC_TINIUM);
                         output.accept(ModItems.TUENIUM_INGOT);
+                        output.accept(ModItems.SYNTHETIC_TUENIUM);
                         output.accept(ModItems.TRINIUM_INGOT);
                         //Mod tools
                         output.accept(ModItems.TUENIUM_SWORD);
