@@ -1,0 +1,10 @@
+1.21.1-0.0.3:
+-Added Synthetic Tuenium, changed all recipes to use ingot tier tags, made the item capsule craftable and added a item renderer.
+
+1.21.1-0.0.2:
+-Added ore generation to all ores, as well as  added tuenium_deepslate_ore, and netherrack_trinium_ore.
+-If you're actually reading this, keep in mind, the release versions will be fore all known 'stable' builds of the mod.
+
+1.21.1-0.0.1:
+-Should be stable. Adds 2 ores, 4 crafting ingredients, 1 set of armor and tools, 3 tiers of ingots/blocks, 4 block generator blocks, and 1 useless block (item capsule).
+-Most of this mod is inaccessible through survival mod and doesn't support jei support for the solid lava or solid glowstone, you will have to read the item tooltips for information about their uses.

@@ -1,7 +1,8 @@
-// 1.21.1	2025-08-18T22:06:21.0771213	Recipes
+// 1.21.1	2025-09-01T20:55:03.9117815	Recipes
 10b128b80311efbc206de7cf5d1943c5bd9e500e data/exponential_factory/advancement/recipes/misc/capsule.json
 569fa3c26ea0afea934fbb6f3134135d8fe8c930 data/exponential_factory/advancement/recipes/misc/raw_tinium_block.json
 3abb3a7e6549874bcebd7b2ad4365e98da4f5bc2 data/exponential_factory/advancement/recipes/misc/raw_tinium_from_raw_tinium_block.json
+8dccc9239ba35e7d5a33f214b228878a6c75bc63 data/exponential_factory/advancement/recipes/misc/simple_mill.json
 33a21f52f8c1740733ac94b9b2d507b208c8a47d data/exponential_factory/advancement/recipes/misc/solid_glowstone.json
 4570d8a1c3b910fab0e3060e33cc44ff841ea488 data/exponential_factory/advancement/recipes/misc/solid_lava.json
 aee536cd33e51ed7a3cf979a90fcb258d4c7da1f data/exponential_factory/advancement/recipes/misc/solid_water.json
@@ -24,6 +25,7 @@ e9e7937decc1d05bfb85e0f323a85bf7cc947fc4 data/exponential_factory/advancement/re
 6a888100dd25cf539115f7564f4495c54c70063b data/exponential_factory/recipe/capsule.json
 246fd34b67d66433bb0977579f9387bf1228ee01 data/exponential_factory/recipe/raw_tinium_block.json
 17120a81d4374912751e05ba3849b6a85f6001b4 data/exponential_factory/recipe/raw_tinium_from_raw_tinium_block.json
+651c95be593dc0acca578a1c7c8e929cf7752230 data/exponential_factory/recipe/simple_mill.json
 b365486755eed47f7c7bbee5469a6c9b299097c2 data/exponential_factory/recipe/solid_glowstone.json
 5cb50e303d5b86653eaee3b64d9dfc7b071b895a data/exponential_factory/recipe/solid_lava.json
 44e40f8a2c8d491e16942e773c87a3c5c5f36419 data/exponential_factory/recipe/solid_water.json

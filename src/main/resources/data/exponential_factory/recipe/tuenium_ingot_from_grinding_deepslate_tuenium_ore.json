@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "exponential_factory:deepslate_tuenium_ore"
+  },
+  "result": {
+    "id": "exponential_factory:tuenium_ingot",
+    "count": 4
+  }
+}

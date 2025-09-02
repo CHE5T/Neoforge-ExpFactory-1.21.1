@@ -6,9 +6,13 @@ import com.lazl0.expfactory.block.entity.renderer.CapsuleEntityRenderer;
 import com.lazl0.expfactory.datagen.DataGenerators;
 import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
+import com.lazl0.expfactory.recipe.ModRecipes;
 import com.lazl0.expfactory.registry.ModCapabilities;
+import com.lazl0.expfactory.screen.ModMenuTypes;
+import com.lazl0.expfactory.screen.custom.SimpleMillScreen;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -50,19 +54,23 @@ public class ExpFactory {
 
         ModBlockEntities.register(modEventBus);
 
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+
         //Register the ModCapabilities (for solid_water_advanced only as of now, unless I forget to change this)
         modEventBus.addListener(ModCapabilities::register);
 
         //Register the DataGenerator
         modEventBus.addListener(DataGenerators::gatherData);
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         modEventBus.addListener(ClientModEvents::registerBlockEntityRenderer);
+        modEventBus.addListener(ClientModEvents::registerScreens);
+
+        // Register the item to a creative tab
+        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -71,18 +79,7 @@ public class ExpFactory {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        /*if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.RAW_TINIUM);
-            event.accept(ModItems.TINIUM_INGOT);
-            event.accept(ModItems.TUENIUM_INGOT);
-        }
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.RAW_TINIUM_BLOCK);
-            event.accept(ModBlocks.TINIUM_BLOCK);
-            event.accept(ModBlocks.TUENIUM_BLOCK);
-            event.accept(ModBlocks.TINIUM_ORE);
-        }*/
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -99,6 +96,11 @@ public class ExpFactory {
         @SubscribeEvent
         public static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
             event.registerBlockEntityRenderer(ModBlockEntities.CAPSULE_BE.get(), CapsuleEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.SIMPLE_MILL_MENU.get(), SimpleMillScreen::new);
         }
     }
 }

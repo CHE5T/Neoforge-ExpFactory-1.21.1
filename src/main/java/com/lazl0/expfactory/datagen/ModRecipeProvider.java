@@ -190,6 +190,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', ModTags.Items.TIER_ONE_INGOT)
                 .define('B', Items.IRON_NUGGET)
                 .unlockedBy("has tinium_ingot", has(ModTags.Items.TIER_ONE_INGOT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SIMPLE_MILL.get())
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
+                .define('B', Items.REDSTONE)
+                .define('C', Items.PISTON)
+                .unlockedBy("has tuenium_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         //Special recipes end
 
 

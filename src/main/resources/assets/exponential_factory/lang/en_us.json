@@ -58,5 +58,9 @@
   "block.exponential_factory.solid_glowstone": "Solid Glowstone",
   "tooltip.exponential_factory.solid_glowstone": "§2GENERATE§r §7ENDSTONE!§r §7Isn't Glowstone Usually Solid?§r §8This+Lava§r",
   "block.exponential_factory.capsule": "Item Capsule",
-  "tooltip.exponential_factory.capsule": "§7Fancy Way To Display Stuff§r"
+  "tooltip.exponential_factory.capsule": "§7Fancy Way To Display Stuff§r",
+
+  "block.exponential_factory.simple_mill": "Simple Mill",
+  "tooltip.exponential_factory.simple_mill": "§4Crush§r §7stuff into other stuff§r",
+  "tooltip.exponential_factory.simple_mill.shift_down": "§7Not very useful as of now§r"
 }

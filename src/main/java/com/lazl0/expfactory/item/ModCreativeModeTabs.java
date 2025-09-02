@@ -61,6 +61,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOLID_LAVA);
                         output.accept(ModBlocks.SOLID_GLOWSTONE);
                         output.accept(ModBlocks.CAPSULE);
+
+                        //Crafting Blocks
+                        output.accept(ModBlocks.SIMPLE_MILL);
                     }).build());
 
 

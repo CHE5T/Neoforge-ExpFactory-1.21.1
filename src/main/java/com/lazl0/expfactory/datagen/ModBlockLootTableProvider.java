@@ -54,6 +54,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SOLID_WATER_ADVANCED.get());
         dropSelf(ModBlocks.SOLID_LAVA.get());
         dropSelf(ModBlocks.SOLID_GLOWSTONE.get());
+
+        //Crafting Blocks
+        dropSelf(ModBlocks.SIMPLE_MILL.get());
     }
 
     protected LootTable.Builder createManyOreDrops(Block block, Item item, float minDrops, float maxDrops) {

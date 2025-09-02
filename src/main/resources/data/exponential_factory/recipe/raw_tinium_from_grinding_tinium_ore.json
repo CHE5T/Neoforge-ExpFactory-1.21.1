@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "exponential_factory:tinium_ore"
+  },
+  "result": {
+    "id": "exponential_factory:raw_tinium",
+    "count": 2
+  }
+}

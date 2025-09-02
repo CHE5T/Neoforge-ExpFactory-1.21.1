@@ -1,0 +1,9 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "id": "minecraft:gravel"
+  }
+}

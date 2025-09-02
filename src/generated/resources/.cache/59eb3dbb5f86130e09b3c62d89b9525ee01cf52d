@@ -1,8 +1,9 @@
-// 1.21.1	2025-08-18T04:29:51.5124535	Loot Tables
+// 1.21.1	2025-09-01T02:43:06.8592962	Loot Tables
 d2029edd93cd7a2920696868403110c3ee0faa56 data/exponential_factory/loot_table/blocks/deepslate_tinium_ore.json
 8aa2c4068ac61405533f90760a6826d2d32482fe data/exponential_factory/loot_table/blocks/deepslate_tuenium_ore.json
 bb38a0185dad1ddc87eb433ae7ee9919a682aeb5 data/exponential_factory/loot_table/blocks/netherrack_trinium_ore.json
 e101f4fcdee7b1e471e31ad5dd5280e7f69d6616 data/exponential_factory/loot_table/blocks/raw_tinium_block.json
+e4eb7731957e5eb16139ca01f0a76ca029bf1765 data/exponential_factory/loot_table/blocks/simple_mill.json
 46967236b70c689f5224aad373892c126c2ad63b data/exponential_factory/loot_table/blocks/solid_glowstone.json
 655ba0e8421f18087edadaee8ccbea40b272ffd7 data/exponential_factory/loot_table/blocks/solid_lava.json
 7aef0ac73391086aa20183f0de11e2f808ff67ce data/exponential_factory/loot_table/blocks/solid_water.json

@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "exponential_factory:netherrack_trinium_ore"
+  },
+  "result": {
+    "id": "exponential_factory:trinium_ingot",
+    "count": 6
+  }
+}

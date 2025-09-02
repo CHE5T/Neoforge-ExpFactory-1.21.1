@@ -30,6 +30,9 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         blockWithItem(ModBlocks.SOLID_WATER_ADVANCED);
         blockWithItem(ModBlocks.SOLID_LAVA);
         blockWithItem(ModBlocks.SOLID_GLOWSTONE);
+
+        //Crafting Blocks
+        blockWithItem(ModBlocks.SIMPLE_MILL);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

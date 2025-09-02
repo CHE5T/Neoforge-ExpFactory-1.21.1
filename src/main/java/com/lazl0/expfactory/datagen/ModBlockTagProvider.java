@@ -29,7 +29,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TINIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TINIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TUENIUM_ORE.get())
-                .add(ModBlocks.NETHERRACK_TRINIUM_ORE.get());
+                .add(ModBlocks.NETHERRACK_TRINIUM_ORE.get())
+                .add(ModBlocks.SIMPLE_MILL.get());
 
 
         tag(BlockTags.NEEDS_IRON_TOOL)

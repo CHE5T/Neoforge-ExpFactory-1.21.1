@@ -78,6 +78,12 @@ public class ModBlocks {
                 }
             });
 
+    //Crafting Blocks Start
+    public static final DeferredBlock<Block> SIMPLE_MILL = registerBlock("simple_mill",
+            () -> new SimpleMill(BlockBehaviour.Properties.of()
+                    .strength(3.5f).sound(SoundType.STONE)));
+    //Crafting Blocks End
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
