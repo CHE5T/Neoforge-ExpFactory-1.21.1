@@ -16,5 +16,4 @@ public final class ModCapabilities {
                 (be, side) -> be.getTank()
         );
     }
-
 }

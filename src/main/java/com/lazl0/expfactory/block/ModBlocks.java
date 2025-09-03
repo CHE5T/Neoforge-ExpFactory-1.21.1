@@ -50,7 +50,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> NETHERRACK_TRINIUM_ORE = registerBlock("netherrack_trinium_ore",
             () -> new DropExperienceBlock(UniformInt.of(6,8),
                     BlockBehaviour.Properties.of().strength(7.0f).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK)));
-    //Custom Blocks
+    //Custom Blocks Start
     public static final DeferredBlock<SolidWater> SOLID_WATER = registerBlock("solid_water",
             () -> new SolidWater(BlockBehaviour.Properties.of()
                     .strength(0.1f, 100f).sound(SoundType.MUD),
@@ -77,6 +77,10 @@ public class ModBlocks {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    //Custom Blocks End
+
+    //Storage Blocks Start
+    //Storage Blocks End
 
     //Crafting Blocks Start
     public static final DeferredBlock<Block> SIMPLE_MILL = registerBlock("simple_mill",

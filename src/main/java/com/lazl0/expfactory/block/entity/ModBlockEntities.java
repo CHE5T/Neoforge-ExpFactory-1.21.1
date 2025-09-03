@@ -21,6 +21,9 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("solid_water_advanced_be", () -> BlockEntityType.Builder.of(
                     SolidWaterAdvancedEntity::new, ModBlocks.SOLID_WATER_ADVANCED.get()).build(null));
 
+    //Storage Blocks Start
+    //Storage Blocks End
+
     //Crafting Blocks Start
     public static final Supplier<BlockEntityType<SimpleMillBlockEntity>> SIMPLE_MILL_BE =
             BLOCK_ENTITIES.register("simple_mill_be", () -> BlockEntityType.Builder.of(
