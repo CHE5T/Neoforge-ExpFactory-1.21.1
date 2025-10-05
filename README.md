@@ -1,6 +1,6 @@
 ![expf logo](expf_logo.png)
 
-About Exp Factory
+Exp Factory
 =======
 [Exp Factory](https://curseforge.com/minecraft/mc-mods/exp-factory) (Short for Exponential Factory) is a mod about making every item in the game automatable for building factories.
 
@@ -9,6 +9,11 @@ Credits
 
 * LAZL0/CHE5T (Same Person)
   * Currently, the only one making this mod since I don't know anyone that knows how to code minecraft mods, including myself.
+
+Problems
+=======
+Item Capsule: Stops rendering item after re-joining world
+
 
 Warnings
 =======
