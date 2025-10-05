@@ -4,6 +4,7 @@ import com.lazl0.expfactory.item.ModItems;
 import com.lazl0.expfactory.recipe.ModRecipes;
 import com.lazl0.expfactory.recipe.SimpleMillRecipe;
 import com.lazl0.expfactory.recipe.SimpleMillRecipeInput;
+import com.lazl0.expfactory.registry.EnergyStorageMachine;
 import com.lazl0.expfactory.screen.custom.SimpleMillMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -26,12 +27,21 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.energy.EnergyStorage;
+import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
+    private static final int CAPACITY = 10240;
+    private static final int MAX_INPUT = CAPACITY/8;
+
+    private EnergyStorageMachine energyStorage = new EnergyStorageMachine(CAPACITY, MAX_INPUT);
+    //RF/tick used, going to be changed once I figure out how to add upgrades
+    private final int energyConsumption = 20;
+
     public final ItemStackHandler inventory = new ItemStackHandler(2){
         @Override
         protected void onContentsChanged(int slot) {
@@ -47,7 +57,7 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
 
     protected final ContainerData data;
     private int progress = 0;
-    private int max_progress = 72;
+    private int max_progress = 200;
 
     public SimpleMillBlockEntity(BlockPos pos, BlockState blockState) {
         super(ModBlockEntities.SIMPLE_MILL_BE.get(), pos, blockState);
@@ -57,6 +67,8 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
                 return switch (i){
                     case 0 -> SimpleMillBlockEntity.this.progress;
                     case 1 -> SimpleMillBlockEntity.this.max_progress;
+                    case 2 -> SimpleMillBlockEntity.this.energyStorage.getEnergyStored();
+                    case 3 -> SimpleMillBlockEntity.this.energyStorage.getMaxEnergyStored();
                     default -> 0;
                 };
             }
@@ -71,7 +83,7 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
 
             @Override
             public int getCount() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -100,9 +112,13 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
         tag.put("inventory", inventory.serializeNBT(registries));
         tag.putInt("simple_mill.progress", progress);
         tag.putInt("simple_mill.max_progress", max_progress);
+        //Serializes rf, should be moved to a blockEnergySerializer block
+        tag.put("energy", this.energyStorage.serializeNBT(registries));
 
         super.saveAdditional(tag, registries);
     }
+
+
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
@@ -111,11 +127,20 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
         inventory.deserializeNBT(registries, tag.getCompound("inventory"));
         progress = tag.getInt("simple_mill.progress");
         max_progress = tag.getInt("simple_mill.max_progress");
+        //Backwards compatible for old "simple mills" (remove after update)
+        if(tag.contains("energy")){
+            //Serializes rf
+            this.energyStorage.deserializeNBT(registries, tag.get("energy"));
+        }
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
         if(hasRecipe()) {
+            //Increments the progress
             progress++;
+            //Extracts the energy
+            energyStorage.extractEnergy(energyConsumption, false);
+
             setChanged(level, blockPos, blockState);
 
             if(hasCraftingFinished()){
@@ -137,7 +162,7 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
 
     private void resetProgress() {
         progress = 0;
-        max_progress = 72;
+        max_progress = 200;
     }
 
     private boolean hasCraftingFinished() {
@@ -150,7 +175,7 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
             return false;
         }
         ItemStack output = recipe.get().value().outputItem();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) && energyStorage.getEnergyStored()>=energyConsumption;
     }
 
     private Optional<RecipeHolder<SimpleMillRecipe>> getCurrentRecipe() {
@@ -178,5 +203,7 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
     public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
-
+    public IEnergyStorage getStorage() {
+        return energyStorage;
+    }
 }

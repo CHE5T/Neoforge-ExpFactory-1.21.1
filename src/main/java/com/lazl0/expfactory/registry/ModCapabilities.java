@@ -15,5 +15,10 @@ public final class ModCapabilities {
                 ModBlockEntities.SOLID_WATER_ADVANCED_BE.get(),
                 (be, side) -> be.getTank()
         );
+        event.registerBlockEntity(
+                Capabilities.EnergyStorage.BLOCK,
+                ModBlockEntities.SIMPLE_MILL_BE.get(),
+                (be, side) -> be.getStorage()
+        );
     }
 }

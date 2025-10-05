@@ -15,10 +15,11 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 public class SimpleMillMenu extends AbstractContainerMenu {
     public final SimpleMillBlockEntity blockEntity;
     private final Level level;
-    private final ContainerData data;
+    public final ContainerData data;
 
     public SimpleMillMenu(int containerId, Inventory inventory, FriendlyByteBuf friendlyByteBuf){
-        this(containerId, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(2));
+        //new SimpleContainerData(#) should be the same # as getCount method in SimpleMillBlockEntity class
+        this(containerId, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(4));
     }
 
     public SimpleMillMenu(int containerId, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
@@ -53,6 +54,15 @@ public class SimpleMillMenu extends AbstractContainerMenu {
         int arrowPixelSize = 24;
 
         return max_progress != 0 && progress != 0 ? progress * arrowPixelSize / max_progress : 0;
+    }
+
+    public int getScaledEnergy() {
+        int energy = this.data.get(2);
+        //int energy = this.blockEntity.getStorage().getEnergyStored();
+        int max_energy = this.data.get(3);
+        //int max_energy = this.blockEntity.getStorage().getMaxEnergyStored();
+        int barPixelSize = 67;
+        return max_energy != 0 && energy != 0 ? energy * barPixelSize / max_energy : 0;
     }
 
     // Kaupenjoe --> CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
