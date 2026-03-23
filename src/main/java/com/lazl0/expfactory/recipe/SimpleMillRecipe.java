@@ -17,14 +17,15 @@ public record SimpleMillRecipe(Ingredient inputItem, ItemStack outputItem) imple
     @Override
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
+        list.add(inputItem);
         return list;
     }
 
     @Override
     public boolean matches(SimpleMillRecipeInput input, Level level) {
-        if(level.isClientSide()){
-            return false;
-        }
+        //if(level.isClientSide()){
+        //    return false;
+        //}
         return inputItem.test(input.getItem(0));
     }
 

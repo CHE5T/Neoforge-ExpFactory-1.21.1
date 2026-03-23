@@ -1,3 +1,16 @@
+1.21.1-0.0.5:
+-Added Forge Energy to Simple Mill
+-Added Energy Storage via redstone batteries and thermal batteries
+-Added Energy Generation via combustion generator
+-Added config for energy storages
+-Added jei compat
+-Made Thermal Batteries able to charge and discharge items with energy
+-Made blocks with energy maintain energy after broken
+-Made items with energy stackable and chargeable
+
+1.21.1-0.0.4:
+-Added Simple Mill to grind down a few blocks. Pretty useless as of now.
+
 1.21.1-0.0.3:
 -Added Synthetic Tuenium, changed all recipes to use ingot tier tags, made the item capsule craftable and added a item renderer.
 

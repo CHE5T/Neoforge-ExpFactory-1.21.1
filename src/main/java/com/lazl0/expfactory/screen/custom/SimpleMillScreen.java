@@ -40,7 +40,7 @@ public class SimpleMillScreen extends AbstractContainerScreen<SimpleMillMenu> {
             guiGraphics.blit(ARROW_TEXTURE, x + 73, y + 35, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
         }
     }
-    //Doesn't work rn
+
     protected void renderEnergyBar(GuiGraphics guiGraphics, int x, int y){
         int scaledEnergy = menu.getScaledEnergy();
         int barHeight = 67;

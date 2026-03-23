@@ -22,6 +22,9 @@ public class ModBlockEntities {
                     SolidWaterAdvancedEntity::new, ModBlocks.SOLID_WATER_ADVANCED.get()).build(null));
 
     //Storage Blocks Start
+    public static final Supplier<BlockEntityType<ThermalBatteryBlockEntity>> THERMAL_BATTERY_BE =
+            BLOCK_ENTITIES.register("thermal_battery_be", () -> BlockEntityType.Builder.of(
+            ThermalBatteryBlockEntity::new, ModBlocks.THERMAL_BATTERY.get()).build(null));
     //Storage Blocks End
 
     //Crafting Blocks Start
@@ -29,6 +32,12 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("simple_mill_be", () -> BlockEntityType.Builder.of(
                     SimpleMillBlockEntity::new, ModBlocks.SIMPLE_MILL.get()).build(null));
     //Crafting Blocks End
+
+    //Generator Blocks Start
+    public static final Supplier<BlockEntityType<CombustionGeneratorBlockEntity>> COMBUSTION_GENERATOR_BE =
+            BLOCK_ENTITIES.register("combustion_generator_be", () -> BlockEntityType.Builder.of(
+                    CombustionGeneratorBlockEntity::new, ModBlocks.COMBUSTION_GENERATOR.get()).build(null));
+    //Generator Blocks End
 
 
     public static void register(IEventBus eventBus) {

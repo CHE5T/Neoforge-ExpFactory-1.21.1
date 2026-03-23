@@ -48,6 +48,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SYNTHETIC_TUENIUM.get());
         basicItem(ModItems.TRINIUM_INGOT.get());
 
+        basicItem(ModItems.REDSTONE_BATTERY.get());
+
 
         //Mod tools
         handheldItem(ModItems.TUENIUM_SWORD.get());

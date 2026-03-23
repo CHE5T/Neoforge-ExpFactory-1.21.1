@@ -8,6 +8,8 @@
     "exponential_factory:deepslate_tinium_ore",
     "exponential_factory:deepslate_tuenium_ore",
     "exponential_factory:netherrack_trinium_ore",
-    "exponential_factory:simple_mill"
+    "exponential_factory:thermal_battery",
+    "exponential_factory:simple_mill",
+    "exponential_factory:combustion_generator"
   ]
 }

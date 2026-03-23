@@ -30,8 +30,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_TINIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TUENIUM_ORE.get())
                 .add(ModBlocks.NETHERRACK_TRINIUM_ORE.get())
-                .add(ModBlocks.SIMPLE_MILL.get());
+                .add(ModBlocks.THERMAL_BATTERY.get())
+                .add(ModBlocks.SIMPLE_MILL.get())
+                .add(ModBlocks.COMBUSTION_GENERATOR.get());
 
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.SIMPLE_MILL.get())
+                .add(ModBlocks.THERMAL_BATTERY.get())
+                .add(ModBlocks.COMBUSTION_GENERATOR.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.TINIUM_BLOCK.get())

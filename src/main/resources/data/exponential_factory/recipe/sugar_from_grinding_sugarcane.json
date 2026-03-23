@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:sugarcane"
+  },
+  "result": {
+    "id": "minecraft:sugar",
+    "count": 3
+  }
+}

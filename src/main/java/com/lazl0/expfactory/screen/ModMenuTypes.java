@@ -1,7 +1,9 @@
 package com.lazl0.expfactory.screen;
 
 import com.lazl0.expfactory.ExpFactory;
+import com.lazl0.expfactory.screen.custom.CombustionGeneratorMenu;
 import com.lazl0.expfactory.screen.custom.SimpleMillMenu;
+import com.lazl0.expfactory.screen.custom.ThermalBatteryMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -16,6 +18,10 @@ public class ModMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<SimpleMillMenu>> SIMPLE_MILL_MENU =
             registerMenuType("simple_mill_menu", SimpleMillMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<ThermalBatteryMenu>> THERMAL_BATTERY_MENU =
+            registerMenuType("thermal_battery_menu", ThermalBatteryMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<CombustionGeneratorMenu>> COMBUSTION_GENERATOR_MENU =
+            registerMenuType("combustion_generator_menu", CombustionGeneratorMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));

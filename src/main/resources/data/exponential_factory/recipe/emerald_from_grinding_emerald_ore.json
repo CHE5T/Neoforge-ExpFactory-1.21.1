@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:emerald_ore"
+  },
+  "result": {
+    "id": "minecraft:emerald",
+    "count": 2
+  }
+}

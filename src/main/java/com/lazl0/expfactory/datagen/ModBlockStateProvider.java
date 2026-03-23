@@ -31,8 +31,12 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         blockWithItem(ModBlocks.SOLID_LAVA);
         blockWithItem(ModBlocks.SOLID_GLOWSTONE);
 
+        //Storage Blocks
+        blockWithItem(ModBlocks.THERMAL_BATTERY);
         //Crafting Blocks
         blockWithItem(ModBlocks.SIMPLE_MILL);
+        //Generator Blocks
+        blockWithItem(ModBlocks.COMBUSTION_GENERATOR);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

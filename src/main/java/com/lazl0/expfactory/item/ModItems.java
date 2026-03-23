@@ -1,16 +1,17 @@
 package com.lazl0.expfactory.item;
 
 import com.lazl0.expfactory.ExpFactory;
+import com.lazl0.expfactory.item.custom.RedstoneBatteryItem;
+import com.lazl0.expfactory.registry.energy.EnergyItem;
 import com.lazl0.expfactory.item.custom.FuelItem;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExpFactory.MODID);
@@ -28,6 +29,9 @@ public class ModItems {
     public static final DeferredItem<Item> TRINIUM_INGOT = ITEMS.register("trinium_ingot",
             () -> new TooltipItem(new Item.Properties(), "tooltip.exponential_factory.trinium_ingot"));
     //Quadnium/Quadinium Ingot next?
+    public static final DeferredItem<Item> REDSTONE_BATTERY = ITEMS.register("redstone_battery",
+            () -> new RedstoneBatteryItem(new Item.Properties(), "tooltip.exponential_factory.redstone_battery",
+                    "tooltip.exponential_factory.redstone_battery.shift_down"));
 
     //Synthetic Versions
     public static final DeferredItem<Item> SYNTHETIC_TINIUM = ITEMS.register("synthetic_tinium",
@@ -47,8 +51,8 @@ public class ModItems {
 
     //Tuenium tools start
     public static final DeferredItem<SwordItem> TUENIUM_SWORD = ITEMS.register("tuenium_sword",
-            () -> new SwordItem(ModToolTiers.TUENIUM, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.TUENIUM, 3, -2.4f))){
+            () -> new SwordItem(ModToolTiers.TUENIUM_TIER, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.TUENIUM_TIER, 3, -2.4f))){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_sword"));
@@ -56,8 +60,8 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<AxeItem> TUENIUM_AXE = ITEMS.register("tuenium_axe",
-            () -> new AxeItem(ModToolTiers.TUENIUM, new Item.Properties()
-                    .attributes(AxeItem.createAttributes(ModToolTiers.TUENIUM, 6, -3))){
+            () -> new AxeItem(ModToolTiers.TUENIUM_TIER, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.TUENIUM_TIER, 6, -3))){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_axe"));
@@ -65,8 +69,8 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<PickaxeItem> TUENIUM_PICKAXE = ITEMS.register("tuenium_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.TUENIUM, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.TUENIUM, 1, -2.8f))){
+            () -> new PickaxeItem(ModToolTiers.TUENIUM_TIER, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.TUENIUM_TIER, 1, -2.8f))){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_pickaxe"));
@@ -74,8 +78,8 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<ShovelItem> TUENIUM_SHOVEL = ITEMS.register("tuenium_shovel",
-            () -> new ShovelItem(ModToolTiers.TUENIUM, new Item.Properties()
-                    .attributes(ShovelItem.createAttributes(ModToolTiers.TUENIUM, 1.5f, -3))){
+            () -> new ShovelItem(ModToolTiers.TUENIUM_TIER, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.TUENIUM_TIER, 1.5f, -3))){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_shovel"));
@@ -83,8 +87,8 @@ public class ModItems {
                 }
             });
     public static final DeferredItem<HoeItem> TUENIUM_HOE = ITEMS.register("tuenium_hoe",
-            () -> new HoeItem(ModToolTiers.TUENIUM, new Item.Properties()
-                    .attributes(HoeItem.createAttributes(ModToolTiers.TUENIUM, -2, -1))){
+            () -> new HoeItem(ModToolTiers.TUENIUM_TIER, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.TUENIUM_TIER, -2, -1))){
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.tuenium_hoe"));

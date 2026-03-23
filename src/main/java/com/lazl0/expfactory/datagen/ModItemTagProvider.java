@@ -44,7 +44,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.TUENIUM_HOE.get());
 
         //Mod armors
-        this.tag(ItemTags.TRIMMABLE_ARMOR)
+        tag(ItemTags.HEAD_ARMOR)
+                .add(ModItems.TUENIUM_HELMET.get());
+        tag(ItemTags.CHEST_ARMOR)
+                .add(ModItems.TUENIUM_CHESTPLATE.get());
+        tag(ItemTags.LEG_ARMOR)
+                .add(ModItems.TUENIUM_LEGGINGS.get());
+        tag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.TUENIUM_BOOTS.get());
+
+        //Mod armor trims
+        tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.TUENIUM_HELMET.get())
                 .add(ModItems.TUENIUM_CHESTPLATE.get())
                 .add(ModItems.TUENIUM_LEGGINGS.get())

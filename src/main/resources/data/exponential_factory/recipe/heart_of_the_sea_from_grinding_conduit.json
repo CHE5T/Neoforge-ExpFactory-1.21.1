@@ -1,0 +1,9 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:conduit"
+  },
+  "result": {
+    "id": "minecraft:heart_of_the_sea"
+  }
+}

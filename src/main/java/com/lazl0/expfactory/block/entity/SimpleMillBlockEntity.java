@@ -1,13 +1,14 @@
 package com.lazl0.expfactory.block.entity;
 
-import com.lazl0.expfactory.item.ModItems;
 import com.lazl0.expfactory.recipe.ModRecipes;
 import com.lazl0.expfactory.recipe.SimpleMillRecipe;
 import com.lazl0.expfactory.recipe.SimpleMillRecipeInput;
-import com.lazl0.expfactory.registry.EnergyStorageMachine;
+import com.lazl0.expfactory.registry.ModDataComponents;
+import com.lazl0.expfactory.registry.energy.EnergyStorageExtra;
 import com.lazl0.expfactory.screen.custom.SimpleMillMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
@@ -21,24 +22,27 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
-    private static final int CAPACITY = 10240;
-    private static final int MAX_INPUT = CAPACITY/8;
+import static com.lazl0.expfactory.Config.SIMPLE_MILL_DEFAULT_CAPACITY;
 
-    private EnergyStorageMachine energyStorage = new EnergyStorageMachine(CAPACITY, MAX_INPUT);
+public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
+    private static final int CAPACITY = SIMPLE_MILL_DEFAULT_CAPACITY.getAsInt();
+    private static final int MAX_INPUT = CAPACITY/20;
+
+    private final EnergyStorageExtra energyStorage = new EnergyStorageExtra(CAPACITY, MAX_INPUT, 0){
+
+    };
     //RF/tick used, going to be changed once I figure out how to add upgrades
     private final int energyConsumption = 20;
 
@@ -49,6 +53,28 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
             if(!level.isClientSide()){
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
+        }
+        //Only allow recipe ingredients in INPUT_SLOT
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            if(slot==INPUT_SLOT){
+                return isRecipeInput(stack);
+            }
+            return super.isItemValid(slot, stack);
+        }
+    };
+    //Wrapper for inventory that is used in for automation (allowing/disallowing hopper slots)
+    public final IItemHandler autoInventory = new CombinedInvWrapper(inventory){
+        @Override
+        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            if(slot!=INPUT_SLOT) return stack;
+            return super.insertItem(slot, stack, simulate);
+        }
+
+        @Override
+        public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            if(slot!=OUTPUT_SLOT) return ItemStack.EMPTY;
+            return super.extractItem(slot, amount, simulate);
         }
     };
 
@@ -94,8 +120,8 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return new SimpleMillMenu(id, inventory, this, this.data);
+    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new SimpleMillMenu(containerId, playerInventory, this, this.data);
     }
 
     public void drops() {
@@ -112,8 +138,8 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
         tag.put("inventory", inventory.serializeNBT(registries));
         tag.putInt("simple_mill.progress", progress);
         tag.putInt("simple_mill.max_progress", max_progress);
-        //Serializes rf, should be moved to a blockEnergySerializer block
-        tag.put("energy", this.energyStorage.serializeNBT(registries));
+        //Serializes rf, should be moved to a blockEnergySerializer block, I wrote this a while ago and forgot what it means
+        tag.put("energy", energyStorage.serializeNBT(registries));
 
         super.saveAdditional(tag, registries);
     }
@@ -136,12 +162,16 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
         if(hasRecipe()) {
-            //Increments the progress
-            progress++;
-            //Extracts the energy
-            energyStorage.extractEnergy(energyConsumption, false);
+            //Pauses recipe if out of energy
+            if(energyStorage.getEnergyStored()>=energyConsumption){
+                //Increments the progress
+                progress++;
+                //Extracts the energy
+                energyStorage.consumeEnergy(energyConsumption, false);
 
-            setChanged(level, blockPos, blockState);
+
+                setChanged(level, blockPos, blockState);
+            }
 
             if(hasCraftingFinished()){
                 craftItem();
@@ -175,7 +205,11 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
             return false;
         }
         ItemStack output = recipe.get().value().outputItem();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) && energyStorage.getEnergyStored()>=energyConsumption;
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+    //Logic to make sure input items are only recipe items
+    private boolean isRecipeInput(ItemStack stack) {
+        return this.level.getRecipeManager().getRecipeFor(ModRecipes.SIMPLE_MILL_TYPE.get(), new SimpleMillRecipeInput(stack), this.level).isPresent();
     }
 
     private Optional<RecipeHolder<SimpleMillRecipe>> getCurrentRecipe() {
@@ -194,6 +228,19 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
         return maxCount >= currentCount + count;
     }
 
+    //Stores the blocks energy as item component
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder components) {
+        super.collectImplicitComponents(components);
+        components.set(ModDataComponents.ENERGY.get(), this.energyStorage.getEnergyStored());
+    }
+    //Pulls the blocks energy from item component
+    @Override
+    protected void applyImplicitComponents(DataComponentInput componentInput) {
+        super.applyImplicitComponents(componentInput);
+        this.energyStorage.setEnergyStored(componentInput.getOrDefault(ModDataComponents.ENERGY.get(), 0));
+    }
+
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries){
         return saveWithoutMetadata(registries);
@@ -203,7 +250,8 @@ public class SimpleMillBlockEntity extends BlockEntity implements MenuProvider {
     public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
-    public IEnergyStorage getStorage() {
+
+    public final IEnergyStorage getEnergyStorage() {
         return energyStorage;
     }
 }

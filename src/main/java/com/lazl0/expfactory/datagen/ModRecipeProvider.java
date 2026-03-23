@@ -79,37 +79,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("A")
                 .pattern("A")
                 .pattern("B")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.STICK)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUENIUM_AXE.get())
                 .pattern("AA")
                 .pattern("AB")
                 .pattern(" B")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.STICK)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUENIUM_PICKAXE.get())
                 .pattern("AAA")
                 .pattern(" B ")
                 .pattern(" B ")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.STICK)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUENIUM_SHOVEL.get())
                 .pattern("A")
                 .pattern("B")
                 .pattern("B")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.STICK)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUENIUM_HOE.get())
                 .pattern("AA")
                 .pattern(" B")
                 .pattern(" B")
-                .define('A', ModItems.TUENIUM_INGOT)
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.STICK)
-                .unlockedBy("has tuenium_ingot", has(ModItems.TUENIUM_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         //Tuenium tool recipes end
 
         //Mod tool recipes end
@@ -189,7 +189,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("B B")
                 .define('A', ModTags.Items.TIER_ONE_INGOT)
                 .define('B', Items.IRON_NUGGET)
-                .unlockedBy("has tinium_ingot", has(ModTags.Items.TIER_ONE_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_one_ingot", has(ModTags.Items.TIER_ONE_INGOT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.THERMAL_BATTERY.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', ModTags.Items.TIER_TWO_INGOT)
+                .define('B', Items.REDSTONE)
+                .define('C', Items.SANDSTONE)
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REDSTONE_BATTERY.get())
+                .pattern(" CA")
+                .pattern("CBC")
+                .pattern("BC ")
+                .define('A', Tags.Items.INGOTS_GOLD)
+                .define('B', Tags.Items.DUSTS_REDSTONE)
+                .define('C', ModTags.Items.TIER_ONE_INGOT)
+                .unlockedBy("has tier_one_ingot", has(ModTags.Items.TIER_ONE_INGOT)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SIMPLE_MILL.get())
                 .pattern("BAB")
@@ -198,8 +215,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', ModTags.Items.TIER_TWO_INGOT)
                 .define('B', Items.REDSTONE)
                 .define('C', Items.PISTON)
-                .unlockedBy("has tuenium_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COMBUSTION_GENERATOR.get())
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', Items.COPPER_INGOT)
+                .define('B', Items.COBBLESTONE)
+                .define('C', ModTags.Items.TIER_TWO_INGOT)
+                .unlockedBy("has tier_two_ingot", has(ModTags.Items.TIER_TWO_INGOT)).save(recipeOutput);
         //Special recipes end
+
+        /*Component clearing recipes start
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.THERMAL_BATTERY.get()).requires(ModBlocks.THERMAL_BATTERY.get())
+                .unlockedBy("has thermal_battery", has(ModBlocks.THERMAL_BATTERY))
+                .save(recipeOutput, "exponential_factory:component_reset_thermal_battery");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.REDSTONE_BATTERY.get()).requires(ModItems.REDSTONE_BATTERY.get())
+                .unlockedBy("has redstone_battery", has(ModItems.REDSTONE_BATTERY))
+                .save(recipeOutput, "exponential_factory:component_reset_redstone_battery");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.SIMPLE_MILL.get()).requires(ModBlocks.SIMPLE_MILL.get())
+                .unlockedBy("has simple_mill", has(ModBlocks.SIMPLE_MILL))
+                .save(recipeOutput, "exponential_factory:component_reset_simple_mill");
+        Component clearing recipes end*/
 
 
 
@@ -207,6 +245,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         List<ItemLike> TINIUM_INGOT_OUTPUT = List.of(ModItems.RAW_TINIUM, ModBlocks.TINIUM_ORE, ModBlocks.DEEPSLATE_TINIUM_ORE);
         oreSmelting(recipeOutput, TINIUM_INGOT_OUTPUT, RecipeCategory.MISC, ModItems.TINIUM_INGOT.get(), 0.7f, 200, "tinium");
         oreBlasting(recipeOutput, TINIUM_INGOT_OUTPUT, RecipeCategory.MISC, ModItems.TINIUM_INGOT.get(), 0.7f, 100, "tinium");
+
+        List<ItemLike> TUENIUM_INGOT_OUTPUT = List.of(ModBlocks.DEEPSLATE_TUENIUM_ORE);
+        oreSmelting(recipeOutput, TUENIUM_INGOT_OUTPUT, RecipeCategory.MISC, ModItems.TUENIUM_INGOT.get(), 0.7f, 200, "tuenium");
+        oreBlasting(recipeOutput, TUENIUM_INGOT_OUTPUT, RecipeCategory.MISC, ModItems.TUENIUM_INGOT.get(), 0.7f, 100, "tuenium");
 
         List<ItemLike> IRON_INPUT = List.of(Items.IRON_INGOT);
         oreSmelting(recipeOutput, IRON_INPUT, RecipeCategory.MISC, ModItems.SYNTHETIC_TINIUM.get(), 0.7f, 200, "synthetic_tinium");

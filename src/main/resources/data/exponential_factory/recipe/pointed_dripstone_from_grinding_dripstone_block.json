@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:dripstone_block"
+  },
+  "result": {
+    "id": "minecraft:pointed_dripstone",
+    "count": 4
+  }
+}

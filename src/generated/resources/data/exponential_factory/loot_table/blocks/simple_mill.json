@@ -3,14 +3,18 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "exponential_factory:energy"
+              ],
+              "source": "block_entity"
+            }
+          ],
           "name": "exponential_factory:simple_mill"
         }
       ],

@@ -15,7 +15,7 @@ public class SolidWaterAdvancedEntity extends BlockEntity {
     private final FluidTank tank = new FluidTank(CAPACITY, fs -> fs.getFluid().isSame(Fluids.WATER)) {
         @Override
         public int fill(FluidStack resource, FluidAction action) {
-            return 0; // cannot be filled
+            return resource.getAmount(); //voids input fluids
         }
 
         @Override

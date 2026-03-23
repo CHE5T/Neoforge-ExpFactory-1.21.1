@@ -3,6 +3,7 @@ package com.lazl0.expfactory.block;
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.block.custom.*;
 import com.lazl0.expfactory.item.ModItems;
+import com.lazl0.expfactory.registry.energy.EnergyBlockItem;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -59,7 +60,8 @@ public class ModBlocks {
     public static final DeferredBlock<SolidWaterAdvanced> SOLID_WATER_ADVANCED = registerBlock("solid_water_advanced",
             () -> new SolidWaterAdvanced(BlockBehaviour.Properties.of()
                     .strength(0.2f, 100f).sound(SoundType.MUD),
-                    "tooltip.exponential_factory.solid_water_advanced"));
+                    "tooltip.exponential_factory.solid_water_advanced",
+                    "tooltip.exponential_factory.solid_water_advanced.shift_down"));
     public static final DeferredBlock<SolidLava> SOLID_LAVA = registerBlock("solid_lava",
             () -> new SolidLava(BlockBehaviour.Properties.of()
                     .strength(0.4f, 100f).sound(SoundType.WART_BLOCK),
@@ -70,7 +72,7 @@ public class ModBlocks {
                     "tooltip.exponential_factory.solid_glowstone"));
 
     public static final DeferredBlock<Block> CAPSULE = registerBlock("capsule",
-            () -> new Capsule(BlockBehaviour.Properties.of().noLootTable().noOcclusion()){
+            () -> new Capsule(BlockBehaviour.Properties.of().noOcclusion()){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.exponential_factory.capsule"));
@@ -80,18 +82,37 @@ public class ModBlocks {
     //Custom Blocks End
 
     //Storage Blocks Start
+    public static final DeferredBlock<Block> THERMAL_BATTERY = registerEnergyBlock("thermal_battery",
+            () -> new ThermalBattery(BlockBehaviour.Properties.of()
+                    .strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.GILDED_BLACKSTONE)));
     //Storage Blocks End
 
     //Crafting Blocks Start
-    public static final DeferredBlock<Block> SIMPLE_MILL = registerBlock("simple_mill",
+    public static final DeferredBlock<Block> SIMPLE_MILL = registerEnergyBlock("simple_mill",
             () -> new SimpleMill(BlockBehaviour.Properties.of()
-                    .strength(3.5f).sound(SoundType.STONE)));
+                    .strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     //Crafting Blocks End
+
+    //Generator Blocks Start
+    public static final DeferredBlock<Block> COMBUSTION_GENERATOR = registerEnergyBlock("combustion_generator",
+            () -> new CombustionGenerator(BlockBehaviour.Properties.of()
+                    .strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.POLISHED_TUFF)));
+    //Generator Blocks End
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerEnergyBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerEnergyBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerEnergyBlockItem(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, () -> new EnergyBlockItem(block.get(), new Item.Properties()));
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {

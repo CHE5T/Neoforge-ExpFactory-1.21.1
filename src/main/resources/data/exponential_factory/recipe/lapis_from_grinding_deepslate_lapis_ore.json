@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:deepslate_lapis_ore"
+  },
+  "result": {
+    "id": "minecraft:lapis",
+    "count": 9
+  }
+}

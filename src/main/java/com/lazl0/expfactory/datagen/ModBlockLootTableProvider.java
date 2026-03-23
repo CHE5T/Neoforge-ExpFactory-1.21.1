@@ -3,6 +3,7 @@ package com.lazl0.expfactory.datagen;
 import com.lazl0.expfactory.block.ModBlocks;
 import com.lazl0.expfactory.block.custom.SolidWater;
 import com.lazl0.expfactory.item.ModItems;
+import com.lazl0.expfactory.registry.ModDataComponents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -14,11 +15,14 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.fml.common.Mod;
 
@@ -50,13 +54,24 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.NETHERRACK_TRINIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.NETHERRACK_TRINIUM_ORE.get(), ModItems.TRINIUM_INGOT.get()));
         //Custom Blocks
+        dropSelf(ModBlocks.CAPSULE.get());
         dropSelf(ModBlocks.SOLID_WATER.get());
         dropSelf(ModBlocks.SOLID_WATER_ADVANCED.get());
         dropSelf(ModBlocks.SOLID_LAVA.get());
         dropSelf(ModBlocks.SOLID_GLOWSTONE.get());
 
+        //Storage Blocks
+        add(ModBlocks.THERMAL_BATTERY.get(),
+                block -> energyBlockDrop(ModBlocks.THERMAL_BATTERY.get()));
+
         //Crafting Blocks
-        dropSelf(ModBlocks.SIMPLE_MILL.get());
+        add(ModBlocks.SIMPLE_MILL.get(),
+                block -> energyBlockDrop(ModBlocks.SIMPLE_MILL.get()));
+
+        //Generator Blocks
+        add(ModBlocks.COMBUSTION_GENERATOR.get(),
+                block -> energyBlockDrop(ModBlocks.COMBUSTION_GENERATOR.get()));
+
     }
 
     protected LootTable.Builder createManyOreDrops(Block block, Item item, float minDrops, float maxDrops) {
@@ -65,6 +80,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 this.applyExplosionDecay(block, LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+
+    protected LootTable.Builder energyBlockDrop(Block block) {
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block)
+                                .apply(CopyComponentsFunction.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
+                                                .include(ModDataComponents.ENERGY.get())
+                                        // .include(DataComponents.CUSTOM_NAME) //For future, to add other components that get copied. Like upgrades
+                                )
+                        )
+                );
     }
 
     @Override

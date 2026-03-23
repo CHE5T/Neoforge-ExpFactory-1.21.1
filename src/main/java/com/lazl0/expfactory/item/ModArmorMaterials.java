@@ -1,6 +1,7 @@
 package com.lazl0.expfactory.item;
 
 import com.lazl0.expfactory.ExpFactory;
+import com.lazl0.expfactory.util.ModTags;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -25,13 +26,13 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.LEGGINGS, 6);
                 attribute.put(ArmorItem.Type.BOOTS, 3);
                 attribute.put(ArmorItem.Type.BODY, 7);
-            }), 20, 2, 0.025f, () ->ModItems.TUENIUM_INGOT.get());
+            }), 25, 1.5f, 0.025f, () -> Ingredient.of(ModTags.Items.TIER_TWO_INGOT));
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,
-                                                  Supplier<Item> ingredientItem) {
+                                                  Supplier<Ingredient> repairIngredient) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(ExpFactory.MODID, name);
         Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
-        Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem.get());
+        Supplier<Ingredient> ingredient = repairIngredient;
         List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
 
         EnumMap<ArmorItem.Type, Integer> typeMap = new EnumMap<>(ArmorItem.Type.class);

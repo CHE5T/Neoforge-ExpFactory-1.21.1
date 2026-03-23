@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has tinium_ingot": {
+    "has tier_one_ingot": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has tinium_ingot"
+      "has tier_one_ingot"
     ]
   ],
   "rewards": {

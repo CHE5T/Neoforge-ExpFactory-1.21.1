@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:deepslate_redstone_ore"
+  },
+  "result": {
+    "id": "minecraft:redstone",
+    "count": 10
+  }
+}

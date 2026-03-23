@@ -69,7 +69,7 @@ public class SimpleMill extends BaseEntityBlock {
         if(!level.isClientSide()){
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof SimpleMillBlockEntity simpleMillBlockEntity) {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(simpleMillBlockEntity, Component.literal("Simple Mill")), pos);
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(simpleMillBlockEntity, Component.translatable("block.exponential_factory.simple_mill")), pos);
             }else{
                 throw new IllegalStateException("Container Provider Missing.");
             }

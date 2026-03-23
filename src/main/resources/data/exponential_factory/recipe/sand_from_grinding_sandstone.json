@@ -1,0 +1,10 @@
+{
+  "type": "exponential_factory:simple_mill",
+  "ingredient": {
+    "item": "minecraft:sandstone"
+  },
+  "result": {
+    "id": "minecraft:sand",
+    "count": 4
+  }
+}

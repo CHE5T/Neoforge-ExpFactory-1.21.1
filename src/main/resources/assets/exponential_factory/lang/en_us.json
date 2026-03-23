@@ -1,6 +1,6 @@
 {
-  "creativetab.exponential_factory.tinium_items": "EXP Factory Items",
-  "creativetab.exponential_factory.tinium_blocks": "EXP Factory Blocks",
+  "creativetab.exponential_factory.tinium_items": "Exp Factory",
+  "creativetab.exponential_factory.tinium_blocks": "Exp Factory Blocks",
 
   "item.exponential_factory.raw_tinium": "Raw Tinium",
   "tooltip.exponential_factory.raw_tinium": "§7Tier 1 Resource§r",
@@ -53,6 +53,7 @@
   "tooltip.exponential_factory.solid_water.shift_down": "§4Might Leave Water Behind.§r §7Good For Pools Though.§r",
   "block.exponential_factory.solid_water_advanced": "Advanced Solid Water",
   "tooltip.exponential_factory.solid_water_advanced": "§2INFINITE WATER!§r §7Good For Machines§r §8I Know... It's A Sink§r",
+  "tooltip.exponential_factory.solid_water_advanced.shift_down": "§4Voids all input liquids!§r",
   "block.exponential_factory.solid_lava": "Solid Lava",
   "tooltip.exponential_factory.solid_lava": "§2GENERATE§r §7COBBLED DEEPSLATE AND NETHERRACK!§r §8This+Water and This+Lava§r",
   "block.exponential_factory.solid_glowstone": "Solid Glowstone",
@@ -60,7 +61,18 @@
   "block.exponential_factory.capsule": "Item Capsule",
   "tooltip.exponential_factory.capsule": "§7Fancy Way To Display Stuff§r",
 
+  "block.exponential_factory.thermal_battery": "Thermal Battery",
+  "tooltip.exponential_factory.thermal_battery": "§7Battery, Cell, Bank, Accumulator?, Cube!?, idk, whatever you call it§r",
+  "tooltip.exponential_factory.thermal_battery.shift_down": "§7Why doesn't this mod have any cables?§r",
+  "item.exponential_factory.redstone_battery": "Redstone Battery",
+  "tooltip.exponential_factory.redstone_battery": "§7MMmmmm Battery, Cell, §r",
+  "tooltip.exponential_factory.redstone_battery.shift_down": "§2Now Stackable!§r §7Loses a little energy though§r",
+
   "block.exponential_factory.simple_mill": "Simple Mill",
   "tooltip.exponential_factory.simple_mill": "§4Crush§r §7stuff into other stuff§r",
-  "tooltip.exponential_factory.simple_mill.shift_down": "§7Not very useful as of now§r"
+  "tooltip.exponential_factory.simple_mill.shift_down": "§7A little useful now§r",
+
+  "block.exponential_factory.combustion_generator": "Combustion Generator",
+  "tooltip.exponential_factory.combustion_generator": "§4Burn§r §7stuff into§r §2energy§r",
+  "tooltip.exponential_factory.combustion_generator.shift_down": "§7My glorious invention§r"
 }

@@ -8,8 +8,11 @@ import com.lazl0.expfactory.item.ModCreativeModeTabs;
 import com.lazl0.expfactory.item.ModItems;
 import com.lazl0.expfactory.recipe.ModRecipes;
 import com.lazl0.expfactory.registry.ModCapabilities;
+import com.lazl0.expfactory.registry.ModDataComponents;
 import com.lazl0.expfactory.screen.ModMenuTypes;
+import com.lazl0.expfactory.screen.custom.CombustionGeneratorScreen;
 import com.lazl0.expfactory.screen.custom.SimpleMillScreen;
+import com.lazl0.expfactory.screen.custom.ThermalBatteryScreen;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -53,6 +56,7 @@ public class ExpFactory {
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
@@ -101,6 +105,8 @@ public class ExpFactory {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.SIMPLE_MILL_MENU.get(), SimpleMillScreen::new);
+            event.register(ModMenuTypes.THERMAL_BATTERY_MENU.get(), ThermalBatteryScreen::new);
+            event.register(ModMenuTypes.COMBUSTION_GENERATOR_MENU.get(), CombustionGeneratorScreen::new);
         }
     }
 }

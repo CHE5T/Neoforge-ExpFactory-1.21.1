@@ -19,8 +19,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 public class SolidWaterAdvanced extends TooltipBlock implements EntityBlock {
-    public SolidWaterAdvanced(Properties properties, String key){
-        super(properties, key);
+    public SolidWaterAdvanced(Properties properties, String key, String key2){
+        super(properties, key, key2);
     }
 
     @Override
