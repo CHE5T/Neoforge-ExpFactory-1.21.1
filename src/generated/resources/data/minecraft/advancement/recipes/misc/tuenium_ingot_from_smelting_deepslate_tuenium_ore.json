@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_tuenium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "exponential_factory:deepslate_tuenium_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tuenium_ingot_from_smelting_deepslate_tuenium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_tuenium_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tuenium_ingot_from_smelting_deepslate_tuenium_ore"
+    ]
+  }
+}

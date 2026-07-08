@@ -1,0 +1,7 @@
+{
+  "values": [
+    "exponential_factory:simple_mill",
+    "exponential_factory:thermal_battery",
+    "exponential_factory:combustion_generator"
+  ]
+}

@@ -24,6 +24,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -111,13 +112,15 @@ public class CombustionGeneratorBlockEntity extends BlockEntity implements MenuP
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
         //Generates energy when there is burnTime left and energy buffer isn't full
         if(burn_time > 0 && energyStorage.getEnergyStored() < energyStorage.getMaxEnergyStored()){
-            energyStorage.generateEnergy(40, false);//Generates 40rf/t
-            burn_time -= 10;//Subtracts by 10 since 1 is far too much rf generation(1 coal is 1600 ticks)
+            energyStorage.generateEnergy(60, false);//Generates 60rf/t
+            level.setBlock(blockPos, level.getBlockState(blockPos).setValue(BlockStateProperties.LIT, true), 3);
+            burn_time -= 15;//Subtracts by 15 since 1 is far too much rf generation(1 coal is 1600 ticks)
             setChanged(level, blockPos, blockState);
         }
         //Burns items when combustible is present
-        if(!inventory.getStackInSlot(0).isEmpty()){
-            if(burn_time <= 0){
+        if(burn_time <= 0){
+            level.setBlock(blockPos, level.getBlockState(blockPos).setValue(BlockStateProperties.LIT, false), 3);
+            if(!inventory.getStackInSlot(0).isEmpty()){
                 burn_time = inventory.getStackInSlot(0).getBurnTime(RecipeType.SMELTING);
                 max_burn_time = burn_time;
                 inventory.extractItem(0, 1, false);

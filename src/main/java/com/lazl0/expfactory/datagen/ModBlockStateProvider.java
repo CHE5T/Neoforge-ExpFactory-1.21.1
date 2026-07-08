@@ -3,7 +3,10 @@ package com.lazl0.expfactory.datagen;
 import com.lazl0.expfactory.ExpFactory;
 import com.lazl0.expfactory.block.ModBlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -36,7 +39,7 @@ public class ModBlockStateProvider  extends BlockStateProvider {
         //Crafting Blocks
         blockWithItem(ModBlocks.SIMPLE_MILL);
         //Generator Blocks
-        blockWithItem(ModBlocks.COMBUSTION_GENERATOR);
+        //blockWithItem(ModBlocks.COMBUSTION_GENERATOR);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

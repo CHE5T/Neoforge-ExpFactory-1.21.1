@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/orientable",
+	"textures": {
+		"front": "exponential_factory:block/combustion_generator_front_on",
+		"side": "exponential_factory:block/combustion_generator",
+		"top": "exponential_factory:block/combustion_generator"
+	}
+}
